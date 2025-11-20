@@ -2,10 +2,11 @@ import javax.swing.*;
 
 public class MainMenu extends JFrame {
     private JPanel panel1;
-    private JButton button1;
-    private JButton button2;
+    private JButton AddToCart;
+    private JButton toCheckOutButton;
     private JPanel ContentPanel;
     private JPanel BtnPanel;
+    private JTextField ChosenToCart;
 
     public MainMenu(){
         setContentPane(panel1);
