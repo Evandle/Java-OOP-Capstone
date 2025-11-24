@@ -90,6 +90,7 @@ public class SignUpPage extends JPanel {
         }
     }
 
+    // a method that checks if the password contains at least 9 characters, number, special character, and a capital letter
     public boolean passwordChecker(String password) {
         if(password.length() < 9) {
             return false;
