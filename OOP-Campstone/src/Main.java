@@ -9,10 +9,11 @@ public class Main {
         Admin myAdmin = new Admin();
 
         Employee newGuy = new Employee("john", "password123");
-
+        Employee newGuy2 = new Employee("bob", "password123");
+        Employee newGuy3 = new Employee("carl", "password123");
         myAdmin.addEmployee(newGuy);
-
-        myAdmin.removeUser(newGuy);
+        myAdmin.addEmployee(newGuy2);
+        myAdmin.addEmployee(newGuy3);
     }
 
 }

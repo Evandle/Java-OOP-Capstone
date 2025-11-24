@@ -64,6 +64,8 @@ public class DbHandler {
         }
     }
 
+
+
     public static boolean deleteUser(String username) {
         String query = "DELETE FROM USERS WHERE USERNAME = ?";
 
