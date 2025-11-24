@@ -18,6 +18,16 @@ public class Customer extends User {
         this.address = address;
     }
 
+    public double computeCartTotal(){
+        // computes the cart's total
+        double sum = 0;
+        for (CartItem c : cart){
+            sum += c.getItem().getPrice() * c.getQuantity();
+        }
+        return sum;
+    }
+
+
     public String getAddress() {
         return address;
     }
