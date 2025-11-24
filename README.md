@@ -1,5 +1,5 @@
 ﻿# Java-OOP-Capstone
-
+## [Class Diagram}(https://docs.google.com/document/d/1B-mUNfXHVFjU-MUtspN7D6kqCawGlG5pk-BDTuVrhCA/edit?usp=sharing)
 
 This system simulates a Grocery Shopping Experience where customers can browse and purchase products. Users must log in to make purchases; otherwise, an exception is thrown.
 Customers can view available items, their prices, and stock levels, and create a shopping list to checkout, which displays selected items and the total amount.
