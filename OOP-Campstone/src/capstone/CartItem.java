@@ -1,3 +1,5 @@
+package capstone;
+
 public class CartItem {
     private final Item item;
     private int quantity;

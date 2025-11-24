@@ -4,10 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7082d6b-ec16-4797-8623-2ae6344e4a14" name="Changes" comment="">
+    <list default="true" id="e7082d6b-ec16-4797-8623-2ae6344e4a14" name="Changes" comment="Initial commit&#10;&#10;- Add basic User, Admin, Employee, and Customer classes&#10;- Add Item and CartItem structure">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_51_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP-Campstone/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/DbHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Capstone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Capstone.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/MainMenu.form" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/MainMenu.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/OOP-Campstone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/OOP-Campstone.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/MainMenu.form" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/MainMenu.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,17 +38,36 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;maidenator&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Evandle/Java-OOP-Capstone/&quot;,
+    &quot;accountId&quot;: &quot;66918062-74d9-476f-8ee4-a23e1d5de142&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/OOP-Campstone/src/capstone/Customer.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="35jPnfFQUIkMcL7ADIqX6kTU2Ds" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -43,9 +76,36 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "280",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gab\IdeaProjects\Java-OOP-Capstone\OOP-Campstone\src\capstone" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e7082d6b-ec16-4797-8623-2ae6344e4a14" name="Changes" comment="" />
@@ -53,7 +113,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1763620681022</updated>
+      <workItem from="1763949238667" duration="1836000" />
+      <workItem from="1763952045292" duration="5376000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit&#10;&#10;- Add basic User, Admin, Employee, and Customer classes&#10;- Add Item and CartItem structure">
+      <option name="closed" value="true" />
+      <created>1763951042871</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1763951042871</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit&#10;&#10;- Add basic User, Admin, Employee, and Customer classes&#10;- Add Item and CartItem structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit&#10;&#10;- Add basic User, Admin, Employee, and Customer classes&#10;- Add Item and CartItem structure" />
   </component>
 </project>

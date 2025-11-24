@@ -1,3 +1,5 @@
+package capstone;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,11 @@ public class Customer extends User {
         super(username, password);
         this.address = address;
         this.cart = cart;
+    }
+
+    public Customer(String username, String password,  String address) {
+        super(username, password);
+        this.address = address;
     }
 
     public String getAddress() {

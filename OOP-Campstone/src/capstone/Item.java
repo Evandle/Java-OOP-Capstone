@@ -1,3 +1,5 @@
+package capstone;
+
 public class Item {
     private final String itemName;
     private double price;
@@ -26,8 +28,5 @@ public class Item {
     public void setStock(int stock) {
         this.stock = stock;
     }
-
-
-
 
 }
