@@ -105,4 +105,3 @@ public class DbHandler {
         System.out.println("Register success: " + success);
     }
 }
-
