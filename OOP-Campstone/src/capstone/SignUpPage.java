@@ -65,6 +65,14 @@ public class SignUpPage extends JPanel {
             return;
         }
 
+        if (!passwordChecker(password)) {
+            JOptionPane.showMessageDialog(this,
+                    "Password requires at least 9 characters, a symbol, a capital letter, and a number.",
+                    "Password Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         try {
             // Hardcode role as CUSTOMER for new users
             boolean success = DbHandler.registerUser(username, password, "CUSTOMER");
@@ -80,6 +88,25 @@ public class SignUpPage extends JPanel {
             // Handle database connection errors
             JOptionPane.showMessageDialog(this, "Error connecting to database: " + ex.getMessage(), "Sign Up Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    // a method that checks if the password contains at least 9 characters, number, special character, and a capital letter
+    public boolean passwordChecker(String password) {
+        if(password.length() < 9) {
+            return false;
+        }
+
+        boolean hasUpper = false;
+        boolean hasNumber = false;
+        boolean hasSpecial = false;
+
+        for(char c : password.toCharArray()) {
+            if(Character.isUpperCase(c)) { hasUpper =  true;}
+            else if(Character.isDigit(c)) { hasNumber = true;}
+            else if(Character.isLetterOrDigit(c)) { hasSpecial =  true;}
+        }
+
+        return hasUpper && hasNumber && hasSpecial;
     }
 
     /** Returns to the main menu **/
