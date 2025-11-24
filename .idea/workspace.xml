@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7082d6b-ec16-4797-8623-2ae6344e4a14" name="Changes" comment="Initial commit&#10;&#10;- Add basic User, Admin, Employee, and Customer classes&#10;- Add Item and CartItem structure">
+    <list default="true" id="e7082d6b-ec16-4797-8623-2ae6344e4a14" name="Changes" comment="feat: implement stock update logic with database persistence">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/DbHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/DbHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Item.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +41,6 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/OOP-Campstone/src/capstone/Customer.java" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -75,7 +74,6 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -89,6 +87,14 @@
       <recent name="C:\Users\gab\IdeaProjects\Java-OOP-Capstone\OOP-Campstone\src\capstone" />
     </key>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e7082d6b-ec16-4797-8623-2ae6344e4a14" name="Changes" comment="" />
@@ -97,7 +103,8 @@
       <option name="presentableId" value="Default" />
       <updated>1763620681022</updated>
       <workItem from="1763949238667" duration="1836000" />
-      <workItem from="1763952045292" duration="5376000" />
+      <workItem from="1763952045292" duration="10268000" />
+      <workItem from="1763986786490" duration="731000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;&#10;- Add basic User, Admin, Employee, and Customer classes&#10;- Add Item and CartItem structure">
       <option name="closed" value="true" />
@@ -107,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763951042871</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: implement stock update logic with database persistence">
+      <option name="closed" value="true" />
+      <created>1763957595729</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763957595729</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +130,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit&#10;&#10;- Add basic User, Admin, Employee, and Customer classes&#10;- Add Item and CartItem structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit&#10;&#10;- Add basic User, Admin, Employee, and Customer classes&#10;- Add Item and CartItem structure" />
+    <MESSAGE value="feat: implement stock update logic with database persistence" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement stock update logic with database persistence" />
   </component>
 </project>
