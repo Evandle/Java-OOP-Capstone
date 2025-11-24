@@ -1,0 +1,611 @@
+Index: OOP-Campstone/src/capstone/Admin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/OOP-Campstone/src/capstone/Admin.java b/OOP-Campstone/src/capstone/Admin.java
+new file mode 100644
+--- /dev/null	(date 1763985928853)
++++ b/OOP-Campstone/src/capstone/Admin.java	(date 1763985928853)
+@@ -0,0 +1,30 @@
++package capstone;
++
++public class Admin extends Employee {
++    public Admin() {
++        //Sample dummy admin
++        super("admin", "12345");
++    }
++
++    public Admin(String username, String password) {
++        super(username, password);
++    }
++
++    public void addEmployee(Employee employee) {
++        boolean success = DbHandler.registerUser(employee.getUsername(), employee.getPassword(), "EMPLOYEE");
++        if(success)
++            System.out.println(employee.getUsername() + " added to database.");
++    }
++
++    public void addCustomer(Customer customer) {
++        boolean success = DbHandler.registerUser(customer.getUsername(), customer.getPassword(), "CUSTOMER");
++        if(success)
++            System.out.println(customer.getUsername() + " added to database.");
++    }
++
++    public void removeUser(User user) {
++        boolean success = DbHandler.deleteUser(user.getUsername());
++        if(success)
++            System.out.println(user.getUsername() + " removed from database.");
++    }
++}
+Index: OOP-Campstone/src/capstone/CartItem.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/OOP-Campstone/src/capstone/CartItem.java b/OOP-Campstone/src/capstone/CartItem.java
+new file mode 100644
+--- /dev/null	(date 1763985928854)
++++ b/OOP-Campstone/src/capstone/CartItem.java	(date 1763985928854)
+@@ -0,0 +1,27 @@
++package capstone;
++
++public class CartItem {
++    private final Item item;
++    private int quantity;
++
++    public CartItem(Item item, int quantity) {
++        this.item = item;
++        this.quantity = quantity;
++    }
++
++    public double getTotal() {
++        return item.getPrice() * quantity;
++    }
++
++    public void addQuantity(int quantity) {
++        this.quantity += quantity;
++    }
++
++    public Item getItem() {
++        return item;
++    }
++
++    public int getQuantity() {
++        return quantity;
++    }
++}
+Index: OOP-Campstone/src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/OOP-Campstone/src/Main.java b/OOP-Campstone/src/Main.java
+new file mode 100644
+--- /dev/null	(date 1763985928852)
++++ b/OOP-Campstone/src/Main.java	(date 1763985928852)
+@@ -0,0 +1,18 @@
++import capstone.Admin;
++import capstone.DbHandler;
++import capstone.Employee;
++
++public class Main {
++    public static void main(String[] args) {
++        DbHandler.connect();
++
++        Admin myAdmin = new Admin();
++
++        Employee newGuy = new Employee("john", "password123");
++
++        myAdmin.addEmployee(newGuy);
++
++        myAdmin.removeUser(newGuy);
++    }
++
++}
+Index: OOP-Campstone/src/capstone/Employee.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/OOP-Campstone/src/capstone/Employee.java b/OOP-Campstone/src/capstone/Employee.java
+new file mode 100644
+--- /dev/null	(date 1763985928858)
++++ b/OOP-Campstone/src/capstone/Employee.java	(date 1763985928858)
+@@ -0,0 +1,33 @@
++package capstone;
++
++public class Employee extends User {
++
++    public Employee(String username, String password) {
++        super(username, password);
++    }
++
++    public void setPrice(Item item, double price) {
++        item.setPrice(price);
++    }
++
++    public void addItem(Item item) {
++
++    }
++
++    public void removeItem(Item item) {
++
++    }
++
++    public void changeStock(Item item, int stock) {
++        item.setStock(stock);
++    }
++
++    //Employees should be using this instead of changeStock to avoid
++    //accidental overwriting of the entire stock and in case
++    //two users concurrently change the stock
++
++    public void addStock(Item item, int stock) {
++        item.setStock(item.getStock() + stock);
++    }
++
++}
+Index: OOP-Campstone/src/capstone/Item.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/OOP-Campstone/src/capstone/Item.java b/OOP-Campstone/src/capstone/Item.java
+new file mode 100644
+--- /dev/null	(date 1763985928860)
++++ b/OOP-Campstone/src/capstone/Item.java	(date 1763985928860)
+@@ -0,0 +1,32 @@
++package capstone;
++
++public class Item {
++    private final String itemName;
++    private double price;
++    private int stock;
++
++    public Item(String itemName, double price, int stock) {
++        this.itemName = itemName;
++    }
++
++    public String getItemName() {
++        return itemName;
++    }
++
++    public int getStock() {
++        return stock;
++    }
++
++    public double getPrice() {
++        return price;
++    }
++
++    public void setPrice(double price) {
++        this.price = price;
++    }
++
++    public void setStock(int stock) {
++        this.stock = stock;
++    }
++
++}
+Index: .idea/Capstone.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$\" />\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/Capstone.iml b/.idea/Capstone.iml
+--- a/.idea/Capstone.iml	(revision 563670a52eb1500d7f53531c2c4ed3b632738b52)
++++ b/.idea/Capstone.iml	(date 1763985928842)
+@@ -5,5 +5,6 @@
+     <content url="file://$MODULE_DIR$" />
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="library" name="sqlite-jdbc-3.51.0.0" level="project" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: OOP-Campstone/src/capstone/Customer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/OOP-Campstone/src/capstone/Customer.java b/OOP-Campstone/src/capstone/Customer.java
+new file mode 100644
+--- /dev/null	(date 1763985928856)
++++ b/OOP-Campstone/src/capstone/Customer.java	(date 1763985928856)
+@@ -0,0 +1,39 @@
++package capstone;
++
++import java.util.ArrayList;
++import java.util.List;
++
++public class Customer extends User {
++    private String address;
++    private List<CartItem> cart = new ArrayList<>();
++
++    public Customer(String username, String password, String address, List<CartItem> cart) {
++        super(username, password);
++        this.address = address;
++        this.cart = cart;
++    }
++
++    public Customer(String username, String password,  String address) {
++        super(username, password);
++        this.address = address;
++    }
++
++    public String getAddress() {
++        return address;
++    }
++
++    public void setAddress(String address) {
++        this.address = address;
++    }
++
++    public void addToCart(Item item, int quantity) {
++        for(CartItem cartItem : cart)  {
++            if(cartItem.getItem() == item) {
++                cartItem.addQuantity(quantity);
++                return;
++            }
++        }
++        cart.add(new CartItem(item, quantity));
++    }
++
++}
+Index: OOP-Campstone/src/capstone/DbHandler.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/OOP-Campstone/src/capstone/DbHandler.java b/OOP-Campstone/src/capstone/DbHandler.java
+new file mode 100644
+--- /dev/null	(date 1763985928857)
++++ b/OOP-Campstone/src/capstone/DbHandler.java	(date 1763985928857)
+@@ -0,0 +1,82 @@
++package capstone;
++import java.sql.*;
++
++public class DbHandler {
++    private static final String CONNECTION_STRING = "jdbc:sqlite:capstone.db";
++
++    public static Connection connect() {
++        Connection conn = null;
++        try {
++            conn = DriverManager.getConnection(CONNECTION_STRING);
++            System.out.println("Connected to database successfully");
++        } catch(SQLException e) {
++            System.out.println(e.getMessage());
++        }
++        return conn;
++    }
++
++    public static User loginUser(String username, String password) {
++        String query = "SELECT * FROM USERS WHERE USERNAME = ? AND PASSWORD = ?";
++
++        try(Connection conn = connect();
++            PreparedStatement pstmt = conn.prepareStatement(query)) {
++
++            pstmt.setString(1, username);
++            pstmt.setString(2, password);
++
++            ResultSet rs = pstmt.executeQuery();
++
++            if(rs.next())  {
++
++                String role = rs.getString("role");
++                String dbUser = rs.getString("username");
++
++                if("ADMIN".equalsIgnoreCase(role)) {
++                    return new Admin(dbUser, password);
++                } else {
++                    return new Customer(dbUser, password, rs.getString("address"));
++                }
++            }
++        } catch (SQLException e) {
++            throw new RuntimeException(e);
++        }
++
++        return null;
++    }
++
++    public static boolean registerUser(String username, String password, String role) {
++        String query = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
++
++        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(query)) {
++
++            pstmt.setString(1, username);
++            pstmt.setString(2, password);
++            pstmt.setString(3, role);
++            pstmt.executeUpdate();
++            return true;
++        } catch (SQLException e) {
++            if(e.getMessage().contains("UNIQUE constraint failed")) {
++                System.out.println("Username is already in use.");
++            } else {
++                System.out.println(e.getMessage());
++            }
++            return false;
++        }
++    }
++
++    public static boolean deleteUser(String username) {
++        String query = "DELETE FROM USERS WHERE USERNAME = ?";
++
++        try(Connection conn = connect();
++            PreparedStatement pstmt = conn.prepareStatement(query)) {
++            pstmt.setString(1, username);
++            pstmt.executeUpdate();
++
++            return true;
++        } catch (SQLException e) {
++            System.out.println(e.getMessage());
++        }
++        return false;
++    }
++}
++
+Index: OOP-Campstone/src/capstone/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/OOP-Campstone/src/capstone/User.java b/OOP-Campstone/src/capstone/User.java
+new file mode 100644
+--- /dev/null	(date 1763985928864)
++++ b/OOP-Campstone/src/capstone/User.java	(date 1763985928864)
+@@ -0,0 +1,27 @@
++package capstone;
++
++public class User {
++    private String username;
++    private String password;
++
++    public User(String username, String password) {
++        this.username = username;
++        this.password = password;
++    }
++
++    public void setUsername(String username) {
++        this.username = username;
++    }
++
++    public void setPassword(String password) {
++        this.password = password;
++    }
++
++    public String getUsername() {
++        return username;
++    }
++
++    public String getPassword() {
++        return password;
++    }
++}
+Index: OOP-Campstone/OOP-Campstone.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src\" isTestSource=\"false\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/OOP-Campstone/OOP-Campstone.iml b/OOP-Campstone/OOP-Campstone.iml
+--- a/OOP-Campstone/OOP-Campstone.iml	(revision 563670a52eb1500d7f53531c2c4ed3b632738b52)
++++ b/OOP-Campstone/OOP-Campstone.iml	(date 1763985928850)
+@@ -7,5 +7,14 @@
+     </content>
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="module-library" exported="">
++      <library>
++        <CLASSES>
++          <root url="jar://$MODULE_DIR$/../lib/sqlite-jdbc-3.51.0.0.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
+   </component>
+ </module>
+\ No newline at end of file
+Index: OOP-Campstone/src/MainMenu.form
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/OOP-Campstone/src/MainMenu.form b/OOP-Campstone/src/capstone/MainMenu.form
+rename from OOP-Campstone/src/MainMenu.form
+rename to OOP-Campstone/src/capstone/MainMenu.form
+--- a/OOP-Campstone/src/MainMenu.form	(revision 563670a52eb1500d7f53531c2c4ed3b632738b52)
++++ b/OOP-Campstone/src/capstone/MainMenu.form	(date 1763985928861)
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="MainMenu">
++<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="capstone.MainMenu">
+   <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+     <margin top="0" left="0" bottom="0" right="0"/>
+     <constraints>
+Index: OOP-Campstone/src/MainMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/OOP-Campstone/src/MainMenu.java b/OOP-Campstone/src/capstone/MainMenu.java
+rename from OOP-Campstone/src/MainMenu.java
+rename to OOP-Campstone/src/capstone/MainMenu.java
+--- a/OOP-Campstone/src/MainMenu.java	(revision 563670a52eb1500d7f53531c2c4ed3b632738b52)
++++ b/OOP-Campstone/src/capstone/MainMenu.java	(date 1763985928863)
+@@ -1,3 +1,5 @@
++package capstone;
++
+ import javax.swing.*;
+ 
+ public class MainMenu extends JFrame {
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_25\" default=\"true\" project-jdk-name=\"temurin-25\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 563670a52eb1500d7f53531c2c4ed3b632738b52)
++++ b/.idea/misc.xml	(date 1763985928848)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_25" default="true" project-jdk-name="temurin-25" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Java-OOP-Capstone\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+--- a/README.md	(revision 563670a52eb1500d7f53531c2c4ed3b632738b52)
++++ b/README.md	(date 1763985928865)
+@@ -1,2 +1,8 @@
+ # Java-OOP-Capstone
++## [Class Diagram](https://docs.google.com/document/d/1B-mUNfXHVFjU-MUtspN7D6kqCawGlG5pk-BDTuVrhCA/edit?usp=sharing)
++
++This system simulates a Grocery Shopping Experience where customers can browse and purchase products. Users must log in to make purchases; otherwise, an exception is thrown.
++Customers can view available items, their prices, and stock levels, and create a shopping list to checkout, which displays selected items and the total amount.
++Stock is managed via a CSV file, and out-of-stock items are disabled for selection. New users must sign up with a username, password (minimum 8 characters, including an uppercase letter and a number), and delivery address; invalid passwords trigger an exception.
++Employees have dedicated access to manage stock, including adding/removing products and updating prices or quantities. A single admin account can manage users and handle stock.
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e7082d6b-ec16-4797-8623-2ae6344e4a14\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 3\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"35jPnfFQUIkMcL7ADIqX6kTU2Ds\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;280&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e7082d6b-ec16-4797-8623-2ae6344e4a14\" name=\"Changes\" comment=\"\" />\r\n      <created>1763620681022</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1763620681022</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 563670a52eb1500d7f53531c2c4ed3b632738b52)
++++ b/.idea/workspace.xml	(date 1763986382313)
+@@ -5,7 +5,24 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="e7082d6b-ec16-4797-8623-2ae6344e4a14" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_51_0_0.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/OOP-Campstone/src/Main.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Admin.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CartItem.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Customer.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/DbHandler.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Employee.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Item.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/User.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/Capstone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Capstone.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/OOP-Campstone/OOP-Campstone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/OOP-Campstone.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/MainMenu.form" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/MainMenu.form" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/MainMenu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -31,19 +48,20 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;280&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Application.Main.executor": "Run",
++    "ModuleVcsDetector.initialDetectionPerformed": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
++    "RunOnceActivity.git.unshallow": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "280",
++    "git-widget-placeholder": "Merging main",
++    "ignore.virus.scanning.warn.message": "true",
++    "kotlin-language-version-configured": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+       <changelist id="e7082d6b-ec16-4797-8623-2ae6344e4a14" name="Changes" comment="" />
+Index: .idea/data_source_mapping.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/data_source_mapping.xml b/.idea/data_source_mapping.xml
+new file mode 100644
+--- /dev/null	(date 1763985928845)
++++ b/.idea/data_source_mapping.xml	(date 1763985928845)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="DataSourcePerFileMappings">
++    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/dabf9baa-f124-42ed-91f5-120202b03b95/console_1.sql" value="dabf9baa-f124-42ed-91f5-120202b03b95" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/libraries/sqlite_jdbc_3_51_0_0.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/sqlite_jdbc_3_51_0_0.xml b/.idea/libraries/sqlite_jdbc_3_51_0_0.xml
+new file mode 100644
+--- /dev/null	(date 1763985928846)
++++ b/.idea/libraries/sqlite_jdbc_3_51_0_0.xml	(date 1763985928846)
+@@ -0,0 +1,9 @@
++<component name="libraryTable">
++  <library name="sqlite-jdbc-3.51.0.0">
++    <CLASSES>
++      <root url="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.51.0.0.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/dataSources.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.xml b/.idea/dataSources.xml
+new file mode 100644
+--- /dev/null	(date 1763985928843)
++++ b/.idea/dataSources.xml	(date 1763985928843)
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
++    <data-source source="LOCAL" name="capstone.db" uuid="dabf9baa-f124-42ed-91f5-120202b03b95">
++      <driver-ref>sqlite.xerial</driver-ref>
++      <synchronize>true</synchronize>
++      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
++      <jdbc-url>jdbc:sqlite:capstone.db</jdbc-url>
++      <working-dir>$ProjectFileDir$</working-dir>
++    </data-source>
++  </component>
++</project>
+\ No newline at end of file
