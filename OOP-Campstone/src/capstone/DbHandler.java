@@ -78,5 +78,9 @@ public class DbHandler {
         }
         return false;
     }
+
+    public static void addItem(Item item) {
+        // TODO: idk how you to s
+    }
 }
 

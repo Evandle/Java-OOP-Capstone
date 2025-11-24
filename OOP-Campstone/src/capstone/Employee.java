@@ -11,7 +11,8 @@ public class Employee extends User {
     }
 
     public void addItem(Item item) {
-
+    // Added some implementations
+        DbHandler.addItem(item);
     }
 
     public void removeItem(Item item) {
