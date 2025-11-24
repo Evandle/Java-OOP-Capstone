@@ -18,6 +18,9 @@ public class Customer extends User {
         this.address = address;
     }
 
+    public void clearCart(){
+        cart = new ArrayList<>();
+    }
     public double computeCartTotal(){
         // computes the cart's total
         double sum = 0;
