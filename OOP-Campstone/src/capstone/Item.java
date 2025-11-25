@@ -5,10 +5,13 @@ public class Item {
     private double price;
     private int stock;
     private int id;
-    public Item(String itemName, double price, int stock) {
+    private int categoryId;
+
+    public Item(String itemName, double price, int stock, int categoryId) {
         this.itemName = itemName;
         this.price = price;
         this.stock = stock;
+        this.categoryId = categoryId;
     }
 
     public String getItemName() {
@@ -33,6 +36,10 @@ public class Item {
 
     public int getId() {
         return id;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
     }
 
     public void setId(int id) {

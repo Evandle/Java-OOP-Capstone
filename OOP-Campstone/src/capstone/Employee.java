@@ -10,8 +10,8 @@ public class Employee extends User {
         item.setPrice(price);
     }
 
-    public void addItem(Item item, String name, double price, int stock) {
-        Item newItem = new Item(name, price, stock);
+    public void addItem(Item item, String name, double price, int stock, int categoryId) {
+        Item newItem = new Item(name, price, stock, categoryId);
 
         boolean success = DbHandler.addItem(newItem);
 

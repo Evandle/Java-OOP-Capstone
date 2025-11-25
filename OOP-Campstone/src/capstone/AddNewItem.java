@@ -17,6 +17,13 @@ public class AddNewItem extends JFrame {
     private JLabel priceLabel;
 
     public AddNewItem(){
+        categoryCB.removeAllItems(); // Clear any default junk
+
+        java.util.ArrayList<String> categories = DbHandler.getCategoryNames();
+
+        for (String cat : categories) {
+            categoryCB.addItem(cat);
+        }
         setContentPane(addNewItemPanel);
         setSize(300,400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -42,11 +49,9 @@ public class AddNewItem extends JFrame {
             int stock = Integer.parseInt(stockText);
             double price = Double.parseDouble(priceText);
 
-            //WIP DO LATER
             int categoryId = categoryCB.getSelectedIndex() + 1;
 
-
-            Item newItem = new Item(name, price, stock);
+            Item newItem = new Item(name, price, stock, categoryId);
             boolean success = DbHandler.addItem(newItem);
 
             if (success) {

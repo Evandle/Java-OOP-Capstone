@@ -4,26 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7082d6b-ec16-4797-8623-2ae6344e4a14" name="Changes" comment="AddNewItem GUI now works. Category is a WIP">
+    <list default="true" id="e7082d6b-ec16-4797-8623-2ae6344e4a14" name="Changes" comment="feat: add address field to registration and fix password validation&#10;&#10;- Add address text field to SignUpPage GUI&#10;- Update DbHandler.registerUser to store address in database&#10;- Fix logic bug in passwordChecker regarding symbol detection&#10;- Update SQL INSERT query to include address column">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dabf9baa-f124-42ed-91f5-120202b03b95.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dabf9baa-f124-42ed-91f5-120202b03b95.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AddNewItem.form" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AddNewItem.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AddNewItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AddNewItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/DbHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/DbHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/MainMenu/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/SignUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/SignUpPage/SignUpPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/capstone.db" beforeDir="false" afterPath="$PROJECT_DIR$/capstone.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Admin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/DbHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/DbHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/LoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/SignUpPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Item.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +76,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "280",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -133,7 +127,7 @@
       <workItem from="1763949238667" duration="1836000" />
       <workItem from="1763952045292" duration="10268000" />
       <workItem from="1763986786490" duration="731000" />
-      <workItem from="1764044682356" duration="6099000" />
+      <workItem from="1764044682356" duration="7461000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;&#10;- Add basic User, Admin, Employee, and Customer classes&#10;- Add Item and CartItem structure">
       <option name="closed" value="true" />
@@ -167,17 +161,37 @@
       <option name="project" value="LOCAL" />
       <updated>1764049016072</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: add address field to registration and fix password validation&#10;&#10;- Add address text field to SignUpPage GUI&#10;- Update DbHandler.registerUser to store address in database&#10;- Fix logic bug in passwordChecker regarding symbol detection&#10;- Update SQL INSERT query to include address column">
+      <option name="closed" value="true" />
+      <created>1764051034894</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1764051034894</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit&#10;&#10;- Add basic User, Admin, Employee, and Customer classes&#10;- Add Item and CartItem structure" />
     <MESSAGE value="feat: implement stock update logic with database persistence" />
     <MESSAGE value="Added addItem, removeItem, setStock, addStock functions that communicate to the database" />
     <MESSAGE value="AddNewItem GUI now works. Category is a WIP" />
-    <option name="LAST_COMMIT_MESSAGE" value="AddNewItem GUI now works. Category is a WIP" />
+    <MESSAGE value="feat: add address field to registration and fix password validation&#10;&#10;- Add address text field to SignUpPage GUI&#10;- Update DbHandler.registerUser to store address in database&#10;- Fix logic bug in passwordChecker regarding symbol detection&#10;- Update SQL INSERT query to include address column" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add address field to registration and fix password validation&#10;&#10;- Add address text field to SignUpPage GUI&#10;- Update DbHandler.registerUser to store address in database&#10;- Fix logic bug in passwordChecker regarding symbol detection&#10;- Update SQL INSERT query to include address column" />
   </component>
 </project>

@@ -24,7 +24,6 @@
         </constraints>
         <properties>
           <model>
-            <item value=""/>
             <item value="Frozen Goods"/>
             <item value="General Necessities"/>
             <item value="Drinks"/>

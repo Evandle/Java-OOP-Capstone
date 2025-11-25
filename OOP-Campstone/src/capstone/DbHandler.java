@@ -94,14 +94,15 @@ public class DbHandler {
     }
 
     public static boolean addItem(Item item) {
-        String query = "INSERT INTO items (name, price, quantity_in_stock) VALUES (?, ?, ?)";
+        String query = "INSERT INTO items (name, price, quantity_in_stock, category_id) VALUES (?, ?, ?, ?)";
 
         try(Connection conn = connect();
         PreparedStatement pstmt = conn.prepareStatement(query)) {
 
             pstmt.setString(1, item.getItemName());
-            pstmt.setString(2, item.getPrice() + "");
-            pstmt.setString(3, item.getStock() + "");
+            pstmt.setDouble(2, item.getPrice());
+            pstmt.setInt(3, item.getStock());
+            pstmt.setInt(4, item.getCategoryId());
 
             pstmt.executeUpdate();
             System.out.println("Item added successfully: " + item.getItemName());
@@ -189,5 +190,20 @@ public class DbHandler {
             System.out.println("Item ID is already in use: " + itemId);
             return false;
         }
+    }
+
+    public static java.util.ArrayList<String> getCategoryNames() {
+        java.util.ArrayList<String> list = new java.util.ArrayList<>();
+        String query = "SELECT name FROM categories";
+        try (Connection conn = connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            while (rs.next()) {
+                list.add(rs.getString("name"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 }
