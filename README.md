@@ -6,3 +6,8 @@ Customers can view available items, their prices, and stock levels, and create a
 Stock is managed via a CSV file, and out-of-stock items are disabled for selection. New users must sign up with a username, password (minimum 8 characters, including an uppercase letter and a number), and delivery address; invalid passwords trigger an exception.
 Employees have dedicated access to manage stock, including adding/removing products and updating prices or quantities. A single admin account can manage users and handle stock.
 
+## Project To-Do List
+
+- [ ] Add Categories in the database
+- [ ] Pls add more stuff if found
+
