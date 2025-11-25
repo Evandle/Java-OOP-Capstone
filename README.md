@@ -8,6 +8,7 @@ Employees have dedicated access to manage stock, including adding/removing produ
 
 ## Project To-Do List
 
-- [ ] Add Categories in the database
+- [X] Add Categories in the database
 - [ ] Pls add more stuff if found
+
 
