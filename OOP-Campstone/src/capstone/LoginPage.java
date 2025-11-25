@@ -1,5 +1,7 @@
 package capstone;
 
+import capstone.MainMenu.MainMenu;
+
 import javax.swing.*;
 import java.awt.*;
 

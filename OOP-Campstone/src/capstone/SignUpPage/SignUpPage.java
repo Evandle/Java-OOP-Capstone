@@ -1,4 +1,7 @@
-package capstone;
+package capstone.SignUpPage;
+
+import capstone.DbHandler;
+import capstone.MainMenu.MainMenu;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,6 +11,7 @@ public class SignUpPage extends JPanel {
     // GUI components
     private JTextField usernameField;      // Input field for entering username
     private JPasswordField passwordField;  // Input field for entering password
+    private JTextField addressField;       // Input field for entering address
     private JButton signUpButton;          // Button to register a new user
     private JButton backButton;            // Button to return to the main menu
 
@@ -38,6 +42,13 @@ public class SignUpPage extends JPanel {
         gbc.gridx = 1;
         add(passwordField, gbc);
 
+        // Address Label and Field (Row 3)
+        gbc.gridx = 0; gbc.gridy = 3;
+        add(new JLabel("Address:"), gbc);
+        addressField = new JTextField(15);
+        gbc.gridx = 1;
+        add(addressField, gbc);
+
         // Buttons: Sign Up and Back
         signUpButton = new JButton("Sign Up");
         backButton = new JButton("Back");
@@ -45,7 +56,7 @@ public class SignUpPage extends JPanel {
         buttonPanel.add(signUpButton);
         buttonPanel.add(backButton);
 
-        gbc.gridx = 0; gbc.gridy = 3; gbc.gridwidth = 2; // Span two columns
+        gbc.gridx = 0; gbc.gridy = 4; gbc.gridwidth = 2; // Span two columns
         add(buttonPanel, gbc);
 
         // Button Action Listeners
@@ -56,11 +67,12 @@ public class SignUpPage extends JPanel {
     /** Handles user registration **/
 
     private void signUp() {
-        String username = usernameField.getText().trim();                // Get entered username
+        String username = usernameField.getText().trim();                   // Get entered username
         String password = new String(passwordField.getPassword()).trim(); // Get entered password
+        String address = addressField.getText().trim();                   //Get entered address
 
         // Validate that both fields are filled
-        if(username.isEmpty() || password.isEmpty()) {
+        if(username.isEmpty() || password.isEmpty() || address.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Sign Up Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -75,7 +87,7 @@ public class SignUpPage extends JPanel {
 
         try {
             // Hardcode role as CUSTOMER for new users
-            boolean success = DbHandler.registerUser(username, password, "CUSTOMER");
+            boolean success = DbHandler.registerUser(username, password, "CUSTOMER", address);
             if(success) {
                 // Show success message and return to main menu
                 JOptionPane.showMessageDialog(this, "Sign up successful! You can now log in.", "Success", JOptionPane.INFORMATION_MESSAGE);
@@ -103,7 +115,7 @@ public class SignUpPage extends JPanel {
         for(char c : password.toCharArray()) {
             if(Character.isUpperCase(c)) { hasUpper =  true;}
             else if(Character.isDigit(c)) { hasNumber = true;}
-            else if(Character.isLetterOrDigit(c)) { hasSpecial =  true;}
+            else if(!Character.isLetterOrDigit(c)) { hasSpecial =  true;}
         }
 
         return hasUpper && hasNumber && hasSpecial;

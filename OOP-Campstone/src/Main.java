@@ -1,5 +1,5 @@
 import capstone.DbHandler;
-import capstone.MainMenu;
+import capstone.MainMenu.MainMenu;
 
 import javax.swing.*;
 

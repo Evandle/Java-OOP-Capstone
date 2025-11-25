@@ -42,8 +42,8 @@ public class DbHandler {
         return null;
     }
 
-    public static boolean registerUser(String username, String password, String role) {
-        String query = "INSERT INTO USERS (username, password, role) VALUES (?, ?, ?)";
+    public static boolean registerUser(String username, String password, String role, String address) {
+        String query = "INSERT INTO USERS (username, password, role, address) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
@@ -51,6 +51,7 @@ public class DbHandler {
             pstmt.setString(1, username);
             pstmt.setString(2, password);
             pstmt.setString(3, role);
+            pstmt.setString(4, address);
 
             int rows = pstmt.executeUpdate();
             if(rows > 0) {

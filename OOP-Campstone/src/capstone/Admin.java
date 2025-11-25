@@ -11,13 +11,13 @@ public class Admin extends Employee {
     }
 
     public void addEmployee(Employee employee) {
-        boolean success = DbHandler.registerUser(employee.getUsername(), employee.getPassword(), "EMPLOYEE");
+        boolean success = DbHandler.registerUser(employee.getUsername(), employee.getPassword(), "EMPLOYEE", null);
         if(success)
             System.out.println(employee.getUsername() + " added to database.");
     }
 
     public void addCustomer(Customer customer) {
-        boolean success = DbHandler.registerUser(customer.getUsername(), customer.getPassword(), "CUSTOMER");
+        boolean success = DbHandler.registerUser(customer.getUsername(), customer.getPassword(), "CUSTOMER", customer.getAddress());
         if(success)
             System.out.println(customer.getUsername() + " added to database.");
     }

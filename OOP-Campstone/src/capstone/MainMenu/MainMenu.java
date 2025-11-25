@@ -1,4 +1,7 @@
-package capstone;
+package capstone.MainMenu;
+
+import capstone.LoginPage;
+import capstone.SignUpPage.SignUpPage;
 
 import javax.swing.*;
 import java.awt.*;
