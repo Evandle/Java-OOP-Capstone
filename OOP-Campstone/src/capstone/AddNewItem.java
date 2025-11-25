@@ -19,6 +19,7 @@ public class AddNewItem extends JFrame {
         setSize(300,330);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
+        setLocationRelativeTo(null); //Center
     }
 
     static void main() {

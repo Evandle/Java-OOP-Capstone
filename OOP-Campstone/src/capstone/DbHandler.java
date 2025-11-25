@@ -39,7 +39,6 @@ public class DbHandler {
         } catch (SQLException e) {
             System.out.println("Login failed: " + e.getMessage());
         }
-
         return null;
     }
 
@@ -48,11 +47,6 @@ public class DbHandler {
 
         try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
-
-            if (conn == null) {
-                System.out.println("Cannot connect to database.");
-                return false;
-            }
 
             pstmt.setString(1, username);
             pstmt.setString(2, password);
@@ -73,7 +67,6 @@ public class DbHandler {
                 System.out.println("Error registering user: " + e.getMessage());
             }
         }
-
         return false;
     }
 
@@ -99,9 +92,101 @@ public class DbHandler {
         return false;
     }
 
-    // Optional: quick test
-    public static void main(String[] args) {
-        boolean success = registerUser("testuser", "password123", "CUSTOMER");
-        System.out.println("Register success: " + success);
+    public static boolean addItem(Item item) {
+        String query = "INSERT INTO items (name, price, quantity_in_stock) VALUES (?, ?, ?)";
+
+        try(Connection conn = connect();
+        PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setString(1, item.getItemName());
+            pstmt.setString(2, item.getPrice() + "");
+            pstmt.setString(3, item.getStock() + "");
+
+            pstmt.executeUpdate();
+            System.out.println("Item added successfully: " + item.getItemName());
+            return true;
+
+        } catch (SQLException e) {
+            if(e.getMessage().contains("UNIQUE constraint failed")) {
+                System.out.println("Item name is already in use: " + item.getItemName());
+            } else {
+                System.out.println("Error adding Item: " + e.getMessage());
+            }
+        }
+        return false;
+    }
+
+    public static boolean deleteItem(int itemId) {
+        String query = "DELETE FROM items WHERE item_id = ?";
+
+        try(Connection conn = connect();
+        PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setInt(1, itemId);
+            int rowsAffected = pstmt.executeUpdate();
+
+            if(rowsAffected > 0) {
+                System.out.println("Item deleted successfully: " + itemId);
+                return true;
+            } else {
+                System.out.println("Error: Item ID" + itemId + " not found.");
+                return false;
+            }
+        }catch (SQLException e) {
+            if(e.getMessage().contains("UNIQUE constraint failed")) {
+                System.out.println("Item name is already in use: " + itemId);
+            } else  {
+                System.out.println("Error deleting Item: " + e.getMessage());
+            }
+            return  false;
+        }
+    }
+
+    public static boolean updateStock(int itemId, int quantity) {
+        String query =  "UPDATE items SET quantity_in_stock = quantity_in_stock + ? WHERE item_id = ?";
+
+        try(Connection conn = connect();
+        PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setInt(1, quantity);
+            pstmt.setInt(2, itemId);
+
+            int rowsAffected = pstmt.executeUpdate();
+            if(rowsAffected > 0) {
+                System.out.println("Item added successfully: " + itemId);
+                return true;
+            } else  {
+                System.out.println("Error: Item ID" + itemId + " not found.");
+                return false;
+            }
+
+        }catch (SQLException e) {
+            System.out.println("Item ID is already in use: " + itemId);
+            return false;
+        }
+    }
+
+    public static boolean setStock(int itemId, int quantity) {
+        String query = "UPDATE items SET quantity_in_stock = ? WHERE item_id = ?";
+
+        try(Connection conn = connect();
+        PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setInt(1, quantity);
+            pstmt.setInt(2, itemId);
+
+            int rowsAffected = pstmt.executeUpdate();
+            if(rowsAffected > 0) {
+                System.out.println("Item added successfully: " + itemId);
+                return true;
+            } else {
+                System.out.println("Error: Item ID" + itemId + " not found.");
+                return false;
+            }
+
+        }catch (SQLException e) {
+            System.out.println("Item ID is already in use: " + itemId);
+            return false;
+        }
     }
 }

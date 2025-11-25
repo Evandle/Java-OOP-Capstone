@@ -13,6 +13,14 @@ public class MainMenu extends JPanel {
     private JButton signUpButton;    // Button to open sign up page
 
     public MainMenu() {
+        JFrame frame = new JFrame();
+        frame.setTitle("Grocery Shopping System");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(500, 400);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+        frame.setResizable(false);
+
         setLayout(new BorderLayout()); // Use BorderLayout for overall panel
 
         // Top Panel: Welcome & Title
@@ -20,7 +28,7 @@ public class MainMenu extends JPanel {
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS)); // Arrange labels vertically
         topPanel.setBorder(BorderFactory.createEmptyBorder(20, 0, 20, 0)); // Top and bottom padding
 
-        // Welcome label
+        // Welcome to label
         JLabel welcomeLabel = new JLabel("Welcome to", SwingConstants.CENTER);
         welcomeLabel.setFont(new Font("SansSerif", Font.BOLD, 24)); // Set font style and size
         welcomeLabel.setAlignmentX(Component.CENTER_ALIGNMENT);       // Center horizontally
@@ -84,7 +92,7 @@ public class MainMenu extends JPanel {
         topFrame.repaint();                                                  // Repaint JFrame
     }
 
-    /** Opens the Sign Up Page **/
+    /** Opens the Sign-Up Page **/
 
     private void openSignUp() {
         JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this);

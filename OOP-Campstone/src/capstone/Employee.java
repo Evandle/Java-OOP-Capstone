@@ -10,24 +10,35 @@ public class Employee extends User {
         item.setPrice(price);
     }
 
-    public void addItem(Item item) {
+    public void addItem(Item item, String name, double price, int stock) {
+        Item newItem = new Item(name, price, stock);
 
+        boolean success = DbHandler.addItem(newItem);
+
+        if(success)
+            System.out.println("Item added successfully!");
     }
 
     public void removeItem(Item item) {
-
+        boolean success = DbHandler.deleteItem(item.getId());
+        if(success)
+            System.out.println("Item deleted successfully!");
     }
 
-    public void changeStock(Item item, int stock) {
-        item.setStock(stock);
+    public void setStock(Item item, int stock) {
+        boolean success = DbHandler.setStock(item.getId(), stock);
+        if(success)
+            System.out.println("Stock set successfully!");
     }
 
-    //Employees should be using this instead of changeStock to avoid
-    //accidental overwriting of the entire stock and in case
-    //two users concurrently change the stock
+    // Employees should be using addStock by default instead of setStock to
+    // avoid accidental overwriting of the entire stock
+    // and in case two users concurrently change the stock
 
     public void addStock(Item item, int stock) {
-        item.setStock(item.getStock() + stock);
+        boolean success = DbHandler.updateStock(item.getId(), stock);
+        if(success)
+            System.out.println("Stock added successfully!");
     }
 
 }

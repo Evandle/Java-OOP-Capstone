@@ -21,6 +21,7 @@ public class Customer extends User {
     public void clearCart(){
         cart = new ArrayList<>();
     }
+
     public double computeCartTotal(){
         // computes the cart's total
         double sum = 0;
