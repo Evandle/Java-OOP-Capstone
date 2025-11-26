@@ -19,7 +19,7 @@ public class Customer extends User {
     }
 
     public void clearCart(){
-        cart = new ArrayList<>();
+        this.cart.clear();
     }
 
     public double computeCartTotal(){
