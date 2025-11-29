@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7082d6b-ec16-4797-8623-2ae6344e4a14" name="Changes" comment="feat: implement inventory summary view and category linkage&#10;&#10;- Add category_id column to items table (Foreign Key)&#10;- Create SQL View 'inventory_summary' to join items with category names&#10;- Update database schema to support categorization">
-      <change afterPath="$PROJECT_DIR$/Java-OOP-Capstone.iml" afterDir="false" />
+    <list default="true" id="e7082d6b-ec16-4797-8623-2ae6344e4a14" name="Changes" comment="idk what i did">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Customer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +131,8 @@
       <workItem from="1763986786490" duration="731000" />
       <workItem from="1764044682356" duration="8805000" />
       <workItem from="1764175788203" duration="54000" />
-      <workItem from="1764175990312" duration="815000" />
+      <workItem from="1764175990312" duration="3959000" />
+      <workItem from="1764395521727" duration="493000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;&#10;- Add basic User, Admin, Employee, and Customer classes&#10;- Add Item and CartItem structure">
       <option name="closed" value="true" />
@@ -183,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764052429697</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="idk what i did">
+      <option name="closed" value="true" />
+      <created>1764177606417</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1764177606417</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +214,7 @@
     <MESSAGE value="AddNewItem GUI now works. Category is a WIP" />
     <MESSAGE value="feat: add address field to registration and fix password validation&#10;&#10;- Add address text field to SignUpPage GUI&#10;- Update DbHandler.registerUser to store address in database&#10;- Fix logic bug in passwordChecker regarding symbol detection&#10;- Update SQL INSERT query to include address column" />
     <MESSAGE value="feat: implement inventory summary view and category linkage&#10;&#10;- Add category_id column to items table (Foreign Key)&#10;- Create SQL View 'inventory_summary' to join items with category names&#10;- Update database schema to support categorization" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement inventory summary view and category linkage&#10;&#10;- Add category_id column to items table (Foreign Key)&#10;- Create SQL View 'inventory_summary' to join items with category names&#10;- Update database schema to support categorization" />
+    <MESSAGE value="idk what i did" />
+    <option name="LAST_COMMIT_MESSAGE" value="idk what i did" />
   </component>
 </project>

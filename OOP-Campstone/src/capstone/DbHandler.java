@@ -206,4 +206,32 @@ public class DbHandler {
         }
         return list;
     }
+
+    public static java.util.ArrayList<Item> getItems() {
+        java.util.ArrayList<Item> items = new java.util.ArrayList<>();
+        String query = "SELECT * FROM items";
+        try (Connection conn = connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+
+            while (rs.next()) {
+                int id = rs.getInt("item_id");
+                String name = rs.getString("name");
+                double price = rs.getDouble("price");
+                int stock = rs.getInt("quantity_in_stock");
+                int categoryId = rs.getInt("category_id");
+
+                Item item = new Item(name, price, stock, categoryId);
+
+                item.setId(id);
+
+                items.add(item);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error fetching items: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return items;
+    }
 }
