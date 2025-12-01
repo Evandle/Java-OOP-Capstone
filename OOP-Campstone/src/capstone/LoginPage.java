@@ -86,7 +86,7 @@ public class LoginPage extends JPanel {
 
             if(user instanceof Admin) {
                 // To implement AdminPage, remove "//" below
-                // topFrame.getContentPane().add(new AdminPage((Admin) user));
+                 topFrame.getContentPane().add(new AdminPage((Admin) user));
             } else if(user instanceof Customer) {
                 // To implement CustomerPage, remove "//" below
                 topFrame.getContentPane().add(new CustomerPage((Customer) user));

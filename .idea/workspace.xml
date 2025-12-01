@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a390bf8-92b4-4b51-95c3-8165bf849d5d" name="Changes" comment="2nd Draft for Customer Page">
-      <change afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/UserCart.java" afterDir="false" />
+    <list default="true" id="0a390bf8-92b4-4b51-95c3-8165bf849d5d" name="Changes" comment="Added the receipt class in CartItem.java. Added Password confirmation in SignUpPage.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CustomerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CustomerPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CustomerPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CustomerPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/LoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/ProductDetailPage.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
