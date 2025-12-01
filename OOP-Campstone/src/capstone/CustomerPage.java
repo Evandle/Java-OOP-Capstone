@@ -13,8 +13,12 @@ public class CustomerPage extends JPanel {
     private JScrollPane scrollPane;
     private JPanel productPanel;
     private JLabel categoryLabel;
+
+    // Stock of items from database
+    protected java.util.ArrayList<Item> stock;
     public CustomerPage(Customer user) {
         this.currentUser = user;
+        java.util.ArrayList<Item> stock = DbHandler.getItems();
         setLayout(new BorderLayout(10, 10));
 
         JPanel topPanel = new JPanel();
@@ -70,11 +74,12 @@ public class CustomerPage extends JPanel {
 //        for(int i = 0; i < 20; i++){
 //            demoProducts.add(new CartItem(currentCategory, 10, 10 + i));
 //        }
-        showProducts(Cart, currentCategoryIndex-1);
+
+        showProducts(currentCategoryIndex-1);
     }
 
-    public void showProducts(List<String> products, int currentCategoryIndex){
-        for(CartItem item : Cart){
+    public void showProducts(int currentCategoryIndex){
+        for(Item item : stock){
             scrollPane.add(new JPanel());
         }
     }

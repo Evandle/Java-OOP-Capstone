@@ -1,5 +1,7 @@
 package capstone.MainMenu;
 
+import capstone.DbHandler;
+import capstone.Item;
 import capstone.LoginPage;
 import capstone.SignUpPage.SignUpPage;
 
@@ -9,7 +11,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainMenu extends JPanel {
-
     // Top panel to hold welcome and title labels
     JPanel topPanel = new JPanel(new GridLayout(2,1));
     private JButton loginButton;     // Button to open login page
