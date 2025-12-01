@@ -21,7 +21,7 @@ public class CustomerPage extends JPanel {
         this.currentUser = user;
         this.stock = DbHandler.getItems();
         setLayout(new BorderLayout(10, 10));
-
+        setSize(450, 350);
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BorderLayout());
 
@@ -55,6 +55,7 @@ public class CustomerPage extends JPanel {
 
         productPanel = new JPanel();
         productPanel.setLayout(new BoxLayout(productPanel, BoxLayout.Y_AXIS));
+        productPanel.setBorder(BorderFactory.createLineBorder(Color.GRAY));
         scrollPane = new JScrollPane(productPanel);
         scrollPane.getVerticalScrollBar().setUnitIncrement(6);
 
@@ -63,6 +64,11 @@ public class CustomerPage extends JPanel {
         JPanel bottomPanel = new JPanel();
         JButton viewCartBtn = new JButton("View Cart");
         JButton checkOutBtn = new JButton("Check Out");
+
+        viewCartBtn.addActionListener(e->{
+            viewCart(currentUser);
+        });
+
         bottomPanel.add(viewCartBtn);
         bottomPanel.add(checkOutBtn);
 
@@ -76,11 +82,6 @@ public class CustomerPage extends JPanel {
         currentCategoryName = categories.get(currentCategoryIndex);
         categoryLabel.setText(currentCategoryName);
 
-        List<Item> demoProducts = new ArrayList<>();
-//        for(int i = 0; i < 20; i++){
-//            demoProducts.add(new Item(currentCategoryName + " " + (i+1), 10.0, i + 10, currentCategoryIndex+1));
-//        }
-//
         showProducts(stock, currentCategoryIndex+1);
     }
 
@@ -92,12 +93,12 @@ public class CustomerPage extends JPanel {
 
             JButton viewBtn = new JButton("VIEW");
             viewBtn.addActionListener(e->{
-
+                viewProduct(item);
             });
             if (item.getCategoryId()+1 == currentCategoryIndex){
                 JLabel productName = new JLabel(item.getItemName()+" | P"+item.getPrice()+" | x"+item.getStock());
+                panel.setBorder(BorderFactory.createLineBorder(Color.GRAY));
                 panel.add(productName, BorderLayout.WEST);
-
                 panel.add(viewBtn, BorderLayout.EAST);
                 productPanel.add(panel);
                 productPanel.add(Box.createVerticalStrut(5));
@@ -106,5 +107,20 @@ public class CustomerPage extends JPanel {
         }
         productPanel.revalidate();
         productPanel.repaint();
+    }
+
+    public void viewProduct(Item item){
+
+    }
+
+    public void viewCart(Customer user){
+        List<Item> currCart = user.getCart();
+        JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this); // Get the parent JFrame
+        topFrame.getContentPane().removeAll();                              // Remove current panel
+        topFrame.getContentPane().add(new UserCart(currentUser,currCart));                     // Add LoginPage panel
+        topFrame.setSize(400, 300);                                         // Resize window
+        topFrame.setLocationRelativeTo(null);                                // Center window on screen
+        topFrame.revalidate();                                               // Refresh layout
+        topFrame.repaint();
     }
 }

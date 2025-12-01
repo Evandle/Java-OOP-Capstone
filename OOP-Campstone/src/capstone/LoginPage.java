@@ -90,6 +90,8 @@ public class LoginPage extends JPanel {
             } else if(user instanceof Customer) {
                 // To implement CustomerPage, remove "//" below
                 topFrame.getContentPane().add(new CustomerPage((Customer) user));
+                topFrame.setSize(450,350);
+                topFrame.setLocationRelativeTo(null);
             }
 
             topFrame.revalidate(); // Refresh layout

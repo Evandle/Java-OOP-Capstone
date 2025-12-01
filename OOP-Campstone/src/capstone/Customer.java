@@ -49,4 +49,8 @@ public class Customer extends User {
         }
         cart.add(new CartItem(item, quantity));
     }
+
+    public List getCart(){
+        return cart;
+    }
 }
