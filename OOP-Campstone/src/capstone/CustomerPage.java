@@ -9,10 +9,11 @@ public class CustomerPage extends JPanel {
     private final Customer currentUser;
     private int currentCategoryIndex = 0;
     private List<String> categories = List.of("Vegetables","Meat","Fruits");
-    private String currentCategory;
+
+    private JLabel categoryLabel;
+    private String currentCategoryName;
     private JScrollPane scrollPane;
     private JPanel productPanel;
-    private JLabel categoryLabel;
     public CustomerPage(Customer user) {
         this.currentUser = user;
         setLayout(new BorderLayout(10, 10));
@@ -23,13 +24,12 @@ public class CustomerPage extends JPanel {
         JButton nextBtn = new JButton("Next");
         JButton prevBtn = new JButton("Prev");
         categoryLabel = new JLabel(categories.get(currentCategoryIndex), SwingConstants.CENTER);
-
         prevBtn.setEnabled(currentCategoryIndex > 0);
         nextBtn.addActionListener(e->{
 
             if(currentCategoryIndex < categories.size()-1){
                 currentCategoryIndex++;
-                updateCategory(currentCategoryIndex);
+                updateCategory(categoryLabel);
             }
             nextBtn.setEnabled(currentCategoryIndex < categories.size()-1);
             prevBtn.setEnabled(currentCategoryIndex > 0);
@@ -38,7 +38,7 @@ public class CustomerPage extends JPanel {
         prevBtn.addActionListener(e->{
             if(currentCategoryIndex > 0){
                 currentCategoryIndex--;
-                updateCategory(currentCategoryIndex);
+                updateCategory(categoryLabel);
             }
             nextBtn.setEnabled(currentCategoryIndex < categories.size()-1);
             prevBtn.setEnabled(currentCategoryIndex > 0);
@@ -49,8 +49,11 @@ public class CustomerPage extends JPanel {
         topPanel.add(prevBtn, BorderLayout.WEST);
         add(topPanel, BorderLayout.NORTH);
 
-        productPanel = new JPanel(new FlowLayout(10, 10, 10));
+        productPanel = new JPanel();
+        productPanel.setLayout(new BoxLayout(productPanel, BoxLayout.Y_AXIS));
         scrollPane = new JScrollPane(productPanel);
+        scrollPane.getVerticalScrollBar().setUnitIncrement(6);
+
         add(scrollPane, BorderLayout.CENTER);
 
         JPanel bottomPanel = new JPanel();
@@ -61,21 +64,35 @@ public class CustomerPage extends JPanel {
 
         add(bottomPanel, BorderLayout.SOUTH);
 
+        currentCategoryName = categories.get(currentCategoryIndex);
+        updateCategory(categoryLabel);
     }
 
-    public void updateCategory(int currentCategoryIndex){
-        currentCategory = categories.get(currentCategoryIndex);
-        categoryLabel.setText(currentCategory);
+    public void updateCategory(JLabel categoryLabel){
+        currentCategoryName = categories.get(currentCategoryIndex);
+        categoryLabel.setText(currentCategoryName);
 
-//        for(int i = 0; i < 20; i++){
-//            demoProducts.add(new CartItem(currentCategory, 10, 10 + i));
-//        }
-        showProducts(Cart, currentCategoryIndex-1);
+        List<Item> demoProducts = new ArrayList<>();
+        for(int i = 0; i < 20; i++){
+            demoProducts.add(new Item(currentCategoryName + " " + (i+1), 10.0, i + 10, currentCategoryIndex+1));
+        }
+        showProducts(demoProducts);
     }
 
-    public void showProducts(List<String> products, int currentCategoryIndex){
-        for(CartItem item : Cart){
-            scrollPane.add(new JPanel());
+    public void showProducts(List<Item> products){
+        productPanel.removeAll();
+        for(Item item : products){
+            JPanel panel = new JPanel(new BorderLayout(5, 5));
+            JLabel productName = new JLabel(item.getItemName());
+
+            JButton viewBtn = new JButton("VIEW");
+            viewBtn.addActionListener(e->{
+
+            });
+            panel.add(productName, BorderLayout.WEST);
+            panel.add(viewBtn, BorderLayout.EAST);
+            productPanel.add(panel);
+            productPanel.add(Box.createVerticalStrut(5));
         }
     }
 }
