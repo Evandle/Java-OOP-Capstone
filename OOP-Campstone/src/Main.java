@@ -1,11 +1,20 @@
 import capstone.DbHandler;
+import capstone.Item;
 import capstone.MainMenu.MainMenu;
 
 import javax.swing.*;
+import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) {
         DbHandler.connect();
+
+        // Test run for files
+        java.util.ArrayList<Item> stock = DbHandler.getItems();
+        for (Item i : stock){
+            System.out.println(i);
+        }
+
 
         // main frame
         SwingUtilities.invokeLater(() -> {

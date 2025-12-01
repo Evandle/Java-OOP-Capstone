@@ -46,4 +46,9 @@ public class Item {
         this.id = id;
     }
 
+    // ToString for testing
+    public String toString(){
+        return itemName+" | P"+price+" | x"+stock+" | ";
+    }
+
 }
