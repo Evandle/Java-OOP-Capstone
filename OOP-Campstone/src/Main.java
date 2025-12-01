@@ -10,10 +10,23 @@ public class Main {
         DbHandler.connect();
 
         // Test run for files
-        java.util.ArrayList<Item> stock = DbHandler.getItems();
-        for (Item i : stock){
-            System.out.println(i);
-        }
+
+
+//        java.util.ArrayList<Item> stock = DbHandler.getItems();
+//        java.util.ArrayList<Item> stock1 = new java.util.ArrayList<>();
+////        stock1.add(new Item("Potato", 30, 10, 1));
+////        stock1.add(new Item("Carrot", 20, 10, 1));
+////        stock1.add(new Item("Eggplant", 15, 10, 1));
+////        stock1.add(new Item("Pickle", 10, 10, 1));
+////        stock1.add(new Item("Celery", 20, 10, 1));
+//
+//        for (Item i : stock){
+////            i.setCategoryId(1);
+////            i.setStock(50);
+//            System.out.println(i);
+////            DbHandler.addItem(i);
+//        }
+
 
 
         // main frame

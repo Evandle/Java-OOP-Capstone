@@ -8,14 +8,18 @@ import java.util.List;
 public class CustomerPage extends JPanel {
     private final Customer currentUser;
     private int currentCategoryIndex = 0;
-    private List<String> categories = List.of("Vegetables","Meat","Fruits");
+    private List<String> categories = List.of("Meat","Vegetables","Fruits");
 
     private JLabel categoryLabel;
     private String currentCategoryName;
     private JScrollPane scrollPane;
     private JPanel productPanel;
+
+    // Stock of items from database
+    protected ArrayList<Item> stock;
     public CustomerPage(Customer user) {
         this.currentUser = user;
+        this.stock = DbHandler.getItems();
         setLayout(new BorderLayout(10, 10));
 
         JPanel topPanel = new JPanel();
@@ -73,26 +77,34 @@ public class CustomerPage extends JPanel {
         categoryLabel.setText(currentCategoryName);
 
         List<Item> demoProducts = new ArrayList<>();
-        for(int i = 0; i < 20; i++){
-            demoProducts.add(new Item(currentCategoryName + " " + (i+1), 10.0, i + 10, currentCategoryIndex+1));
-        }
-        showProducts(demoProducts);
+//        for(int i = 0; i < 20; i++){
+//            demoProducts.add(new Item(currentCategoryName + " " + (i+1), 10.0, i + 10, currentCategoryIndex+1));
+//        }
+//
+        showProducts(stock, currentCategoryIndex+1);
     }
 
-    public void showProducts(List<Item> products){
+    public void showProducts(List<Item> products, int currentCategoryIndex){
         productPanel.removeAll();
         for(Item item : products){
             JPanel panel = new JPanel(new BorderLayout(5, 5));
-            JLabel productName = new JLabel(item.getItemName());
+
 
             JButton viewBtn = new JButton("VIEW");
             viewBtn.addActionListener(e->{
 
             });
-            panel.add(productName, BorderLayout.WEST);
-            panel.add(viewBtn, BorderLayout.EAST);
-            productPanel.add(panel);
-            productPanel.add(Box.createVerticalStrut(5));
+            if (item.getCategoryId()+1 == currentCategoryIndex){
+                JLabel productName = new JLabel(item.getItemName()+" | P"+item.getPrice()+" | x"+item.getStock());
+                panel.add(productName, BorderLayout.WEST);
+
+                panel.add(viewBtn, BorderLayout.EAST);
+                productPanel.add(panel);
+                productPanel.add(Box.createVerticalStrut(5));
+            }
+
         }
+        productPanel.revalidate();
+        productPanel.repaint();
     }
 }
