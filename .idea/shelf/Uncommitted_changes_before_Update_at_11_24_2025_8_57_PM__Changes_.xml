@@ -2,6 +2,7 @@
   <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_24_2025_8_57_PM_[Changes]/shelved.patch" />
   <option name="DESCRIPTION" value="Uncommitted changes before Update at 11/24/2025 8:57 PM [Changes]" />
   <binary>
+    <option name="BEFORE_PATH" />
     <option name="AFTER_PATH" value="capstone.db" />
     <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_24_2025_8_57_PM_[Changes]/capstone.db" />
   </binary>
@@ -11,6 +12,7 @@
     <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_24_2025_8_57_PM_[Changes]/Main.class" />
   </binary>
   <binary>
+    <option name="BEFORE_PATH" />
     <option name="AFTER_PATH" value="lib/sqlite-jdbc-3.51.0.0.jar" />
     <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_24_2025_8_57_PM_[Changes]/sqlite-jdbc-3.51.0.0.jar" />
   </binary>
