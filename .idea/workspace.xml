@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7082d6b-ec16-4797-8623-2ae6344e4a14" name="Changes" comment="Draft for customer page" />
+    <list default="true" id="0a390bf8-92b4-4b51-95c3-8165bf849d5d" name="Changes" comment="test commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CustomerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CustomerPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/capstone.db" beforeDir="false" afterPath="$PROJECT_DIR$/capstone.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CustomerPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CustomerPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -200,15 +212,7 @@
       <option name="project" value="LOCAL" />
       <updated>1764575160192</updated>
     </task>
-    <task id="LOCAL-00009" summary="Added the receipt class in CartItem.java. Added Password confirmation in SignUpPage.java">
-      <option name="closed" value="true" />
-      <created>1764580987980</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1764580987980</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,8 +238,7 @@
     <MESSAGE value="feat: implement inventory summary view and category linkage&#10;&#10;- Add category_id column to items table (Foreign Key)&#10;- Create SQL View 'inventory_summary' to join items with category names&#10;- Update database schema to support categorization" />
     <MESSAGE value="idk what i did" />
     <MESSAGE value="Draft for customer page" />
-    <MESSAGE value="Added the receipt class in CartItem.java. Added Password confirmation in SignUpPage.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the receipt class in CartItem.java. Added Password confirmation in SignUpPage.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Draft for customer page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
