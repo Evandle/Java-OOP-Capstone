@@ -6,7 +6,7 @@ import java.util.List;
 public class ItemTableModel extends AbstractTableModel {
 
     private final String[] COLUMN_NAMES = {"ID", "Name", "Price", "Stock", "Category ID"};
-    private List<Item> itemList;
+    private final List<Item> itemList;
 
     public ItemTableModel(List<Item> itemList) {
         this.itemList = itemList;
@@ -31,13 +31,14 @@ public class ItemTableModel extends AbstractTableModel {
     public Object getValueAt(int rowIndex, int columnIndex) {
         Item item = itemList.get(rowIndex);
 
-        switch (columnIndex) {
-            case 0: return item.getId();
-            case 1: return item.getItemName();
-            case 2: return item.getPrice();
-            case 3: return item.getStock();
-            case 4: return item.getCategoryId();
-            default: return "N/A";
-        }
+        return switch (columnIndex) {
+            case 0 -> item.getId();
+            case 1 -> item.getItemName();
+            case 2 -> item.getPrice();
+            case 3 -> item.getStock();
+            case 4 -> item.getCategoryId();
+            default -> "N/A";
+        };
     }
 }
+

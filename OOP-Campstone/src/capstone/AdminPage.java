@@ -2,7 +2,7 @@ package capstone;
 import capstone.MainMenu.MainMenu;
 import javax.swing.*;
 import java.awt.*;
-import java.util.List;
+
 public class AdminPage extends JPanel {
     public AdminPage (Admin admin){
         setLayout(new BorderLayout(10,10));
@@ -69,5 +69,6 @@ public class AdminPage extends JPanel {
         topFrame.repaint();
         topFrame.dispose();
     }
+
 }
 
