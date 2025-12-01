@@ -17,14 +17,6 @@ public class MainMenu extends JPanel {
     private JButton signUpButton;    // Button to open sign up page
 
     public MainMenu() {
-        JFrame frame = new JFrame();
-        frame.setTitle("Grocery Shopping System");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 400);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
-        frame.setResizable(false);
-
         setLayout(new BorderLayout()); // Use BorderLayout for overall panel
 
         // Top Panel: Welcome & Title
