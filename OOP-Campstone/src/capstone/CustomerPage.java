@@ -8,12 +8,12 @@ import java.util.List;
 public class CustomerPage extends JPanel {
     private final Customer currentUser;
     private int currentCategoryIndex = 0;
-    private List<String> categories = List.of("Meat","Vegetables","Fruits");
+    private final List<String> categories = List.of("Meat","Vegetables","Fruits");
 
-    private JLabel categoryLabel;
+    private final JLabel categoryLabel;
     private String currentCategoryName;
     private JScrollPane scrollPane;
-    private JPanel productPanel;
+    private final JPanel productPanel;
 
     // Stock of items from database
     protected ArrayList<Item> stock;
@@ -123,4 +123,5 @@ public class CustomerPage extends JPanel {
         topFrame.revalidate();                                               // Refresh layout
         topFrame.repaint();
     }
+
 }
