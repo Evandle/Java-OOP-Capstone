@@ -11,6 +11,7 @@ public class SignUpPage extends JPanel {
     // GUI components
     private JTextField usernameField;      // Input field for entering username
     private JPasswordField passwordField;  // Input field for entering password
+    private JPasswordField passwordConfirmField;
     private JTextField addressField;       // Input field for entering address
     private JButton signUpButton;          // Button to register a new user
     private JButton backButton;            // Button to return to the main menu
@@ -42,8 +43,15 @@ public class SignUpPage extends JPanel {
         gbc.gridx = 1;
         add(passwordField, gbc);
 
-        // Address Label and Field (Row 3)
+        // Confirm Password Label and Field (Row 3)
         gbc.gridx = 0; gbc.gridy = 3;
+        add(new JLabel("Confirm Password:"), gbc);
+        passwordConfirmField = new JPasswordField(15); // Input field hides characters
+        gbc.gridx = 1;
+        add(passwordConfirmField, gbc);
+
+        // Address Label and Field (Row 4)
+        gbc.gridx = 0; gbc.gridy = 4;
         add(new JLabel("Address:"), gbc);
         addressField = new JTextField(15);
         gbc.gridx = 1;
@@ -56,7 +64,7 @@ public class SignUpPage extends JPanel {
         buttonPanel.add(signUpButton);
         buttonPanel.add(backButton);
 
-        gbc.gridx = 0; gbc.gridy = 4; gbc.gridwidth = 2; // Span two columns
+        gbc.gridx = 0; gbc.gridy = 5; gbc.gridwidth = 2; // Span two columns
         add(buttonPanel, gbc);
 
         // Button Action Listeners
@@ -69,11 +77,20 @@ public class SignUpPage extends JPanel {
     private void signUp() {
         String username = usernameField.getText().trim();                   // Get entered username
         String password = new String(passwordField.getPassword()).trim(); // Get entered password
-        String address = addressField.getText().trim();                   //Get entered address
+        String address = addressField.getText().trim();               //Get entered address
+        String confirmPassword = new String(passwordConfirmField.getPassword()).trim();
 
         // Validate that both fields are filled
-        if(username.isEmpty() || password.isEmpty() || address.isEmpty()) {
+        if(username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || address.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Sign Up Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!passwordConfirmChecker(password,  confirmPassword)) {
+            JOptionPane.showMessageDialog(this,
+                    "Password confirmation doesn't match.",
+                    "Password Error",
+                    JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -119,6 +136,13 @@ public class SignUpPage extends JPanel {
         }
 
         return hasUpper && hasNumber && hasSpecial;
+    }
+
+    public boolean passwordConfirmChecker(String password, String confirmPassword) {
+        if(!password.equals(confirmPassword)) {
+            return false;
+        }
+        return true;
     }
 
     /** Returns to the main menu **/

@@ -95,4 +95,5 @@ public class CustomerPage extends JPanel {
             productPanel.add(Box.createVerticalStrut(5));
         }
     }
+
 }
