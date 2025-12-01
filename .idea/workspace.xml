@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a390bf8-92b4-4b51-95c3-8165bf849d5d" name="Changes" comment="Added the receipt class in CartItem.java. Added Password confirmation in SignUpPage.java">
+    <list default="true" id="0a390bf8-92b4-4b51-95c3-8165bf849d5d" name="Changes" comment="Added ItemTableModel for WIP GroceryItemList">
+      <change afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/SignUpPage/ItemTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_24_2025_8_57_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_24_2025_8_57_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
