@@ -50,6 +50,8 @@ public class MainMenu extends JPanel {
         loginButton = new JButton("Login");
         signUpButton = new JButton("Sign Up");
 
+        loginButton.setFocusPainted(false);
+
         // Set consistent size for buttons
         loginButton.setPreferredSize(new Dimension(120, 40));
         signUpButton.setPreferredSize(new Dimension(120, 40));
