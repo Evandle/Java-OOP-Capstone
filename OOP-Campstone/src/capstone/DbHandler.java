@@ -1,4 +1,5 @@
 package capstone;
+import javax.management.Query;
 import java.sql.*;
 
 public class DbHandler {
@@ -233,5 +234,40 @@ public class DbHandler {
             e.printStackTrace();
         }
         return items;
+    }
+
+    public static java.util.ArrayList<User> getUsers() {
+        java.util.ArrayList<User> users = new java.util.ArrayList<>();
+        String query = "SELECT * FROM users";
+        try (Connection conn = connect();
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(query)) {
+
+            while (rs.next()) {
+                int id =  rs.getInt("user_id");
+                String username = rs.getString("username");
+                String password = rs.getString("password");
+                String role = rs.getString("role");
+
+                User user = null;
+                if("ADMIN".equals(role)) {
+                    user = new Admin(id, username, password);
+                }
+                else if("CUSTOMER".equals(role)) {
+                    String address = rs.getString("address");
+                    user = new Customer(id, username, password, address);
+                }
+                else if("EMPLOYEE".equals(role)) {
+                    user = new Employee(id, username, password);
+                }
+                if(user != null) {
+                    users.add(user);
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Error fetching users: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return users;
     }
 }

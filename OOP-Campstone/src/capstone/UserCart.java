@@ -40,13 +40,11 @@ public class UserCart extends JPanel{
 
     public void back(){
         JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
-        topFrame.getContentPane().removeAll();                               // Remove current panel
-        topFrame.getContentPane().add(new CustomerPage(currUser));                     // Add SignUpPage panel
-        topFrame.setSize(450, 350);                                         // Resize window for sign up
-        topFrame.setLocationRelativeTo(null);                                // Center window
+        topFrame.getContentPane().removeAll();                              // Remove current panel
+        topFrame.getContentPane().add(new CustomerPage(currUser));          // Add SignUpPage panel
+        topFrame.setSize(450, 350);                            // Resize window for sign up
+        topFrame.setLocationRelativeTo(null);                              // Center window
         topFrame.revalidate();
         topFrame.repaint();
     }
-
-
 }

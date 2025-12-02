@@ -10,8 +10,6 @@ public class Main {
         DbHandler.connect();
 
         // Test run for files
-
-
 //        java.util.ArrayList<Item> stock = DbHandler.getItems();
 //        java.util.ArrayList<Item> stock1 = new java.util.ArrayList<>();
 ////        stock1.add(new Item("Potato", 30, 10, 1));
@@ -26,9 +24,7 @@ public class Main {
 //            System.out.println(i);
 ////            DbHandler.addItem(i);
 //        }
-
-
-
+        
         // main frame
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Grocery Shopping System");

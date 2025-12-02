@@ -4,18 +4,66 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a390bf8-92b4-4b51-95c3-8165bf849d5d" name="Changes" comment="Added ItemTableModel.java">
+    <list default="true" id="0a390bf8-92b4-4b51-95c3-8165bf849d5d" name="Changes" comment="Addded GroceryList.java functionality">
+      <change beforePath="$PROJECT_DIR$/.idea/Capstone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Capstone.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AdminPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AdminPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CustomerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CustomerPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/GroceryList.form" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/GroceryList.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/GroceryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/GroceryList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/ItemTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/ItemTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/DbHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/DbHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/GroceryList.form" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/GroceryList/GroceryList.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/GroceryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/GroceryList/GroceryList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/UserCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/UserCart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/capstone.db" beforeDir="false" afterPath="$PROJECT_DIR$/capstone.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/GroceryList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/GroceryList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-OOP-Capstone/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-OOP-Capstone/capstone/AddNewItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-OOP-Capstone/capstone/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-OOP-Capstone/capstone/CartItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-OOP-Capstone/capstone/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-OOP-Capstone/capstone/DbHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-OOP-Capstone/capstone/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-OOP-Capstone/capstone/GroceryList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-OOP-Capstone/capstone/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-OOP-Capstone/capstone/LoginPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-OOP-Capstone/capstone/MainMenu/MainMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-OOP-Capstone/capstone/MainMenu/MainMenu$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-OOP-Capstone/capstone/MainMenu/MainMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-OOP-Capstone/capstone/SignUpPage/SignUpPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-OOP-Capstone/capstone/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/AddNewItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/AddNewItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/AdminPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/AdminPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CartItem$Receipt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CartItem$Receipt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CartItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CartItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CustomerPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CustomerPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/DbHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/DbHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/GroceryList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/LoginPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/SignUpPage/SignUpPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/SignUpPage/SignUpPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/AbstractLayout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/DimensionInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/GridConstraints.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/GridLayoutManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/Spacer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/SupportCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +140,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel",
@@ -113,10 +161,33 @@
       <recent name="capstone" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gab\IdeaProjects\Java-OOP-Capstone\OOP-Campstone\src\capstone\GroceryList" />
       <recent name="C:\Users\gab\IdeaProjects\Java-OOP-Capstone\OOP-Campstone\src\capstone" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.GroceryList">
+    <configuration name="GroceryList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="capstone.GroceryList.GroceryList" />
+      <module name="OOP-Campstone" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="capstone.GroceryList.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="20" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="OOP-Campstone" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Java-OOP-Capstone" />
       <method v="2">
@@ -128,6 +199,15 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.GroceryList" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GroceryList" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -224,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764604348327</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Addded GroceryList.java functionality">
+      <option name="closed" value="true" />
+      <created>1764607573412</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1764607573412</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +339,8 @@
     <MESSAGE value="idk what i did" />
     <MESSAGE value="Draft for customer page" />
     <MESSAGE value="Added ItemTableModel.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added ItemTableModel.java" />
+    <MESSAGE value="Addded GroceryList.java functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Addded GroceryList.java functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

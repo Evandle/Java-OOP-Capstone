@@ -1,4 +1,8 @@
-package capstone;
+package capstone.GroceryList;
+
+import capstone.DbHandler;
+import capstone.Item;
+import capstone.ItemTableModel;
 
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
@@ -195,14 +199,13 @@ public class GroceryList extends JFrame {
         return (int) idValue;
     }
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
         new GroceryList();
     }
 
 }
 
 class PriceRenderer extends DefaultTableCellRenderer {
-
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
         Component cell = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);

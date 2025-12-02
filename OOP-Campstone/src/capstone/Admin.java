@@ -10,6 +10,10 @@ public class Admin extends Employee {
         super(username, password);
     }
 
+    public Admin(int id, String username, String password) {
+        super(id, username, password);
+    }
+
     public void addEmployee(Employee employee) {
         boolean success = DbHandler.registerUser(employee.getUsername(), employee.getPassword(), "EMPLOYEE", null);
         if(success)
