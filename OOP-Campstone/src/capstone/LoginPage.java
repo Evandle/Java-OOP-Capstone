@@ -103,8 +103,6 @@ public class LoginPage extends JPanel {
         }
     }
 
-    /** Handles the back button action to return to main menu **/
-
     private void goBack() {
         JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
         topFrame.getContentPane().removeAll(); // Remove current panel

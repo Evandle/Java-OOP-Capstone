@@ -4,35 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a390bf8-92b4-4b51-95c3-8165bf849d5d" name="Changes" comment="Added the receipt class in CartItem.java. Added Password confirmation in SignUpPage.java">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_24_2025_8_57_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_24_2025_8_57_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="0a390bf8-92b4-4b51-95c3-8165bf849d5d" name="Changes" comment="Added getUsers(); function in the database handler that returns an ArrayList of all users.">
+      <change afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/ReceiptGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dabf9baa-f124-42ed-91f5-120202b03b95.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dabf9baa-f124-42ed-91f5-120202b03b95.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CustomerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CustomerPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/DbHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/DbHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/MainMenu/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/MainMenu/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/capstone.db" beforeDir="false" afterPath="$PROJECT_DIR$/capstone.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/AddNewItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/AddNewItem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CartItem$Receipt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CartItem$Receipt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/AdminPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/AdminPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CartItem$Receipt.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CartItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CartItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Customer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CustomerPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CustomerPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/DbHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/DbHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/GroceryList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/GroceryList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/LoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Employee.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/SignUpPage/SignUpPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/SignUpPage/SignUpPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/AbstractLayout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/DimensionInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/GridConstraints.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/GridLayoutManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/Spacer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/SupportCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +41,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -57,8 +51,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/Evandle/Java-OOP-Capstone",
-    "accountId": "68b82401-d94c-4e20-81de-cfa2b8a44391"
+    "url": "https://github.com/Evandle/Java-OOP-Capstone/",
+    "accountId": "66918062-74d9-476f-8ee4-a23e1d5de142"
   }
 }]]></component>
   <component name="HighlightingSettingsPerFile">
@@ -82,45 +76,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AddNewItem.executor": "Run",
-    "Application.DbHandler.executor": "Run",
-    "Application.GroceryList.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.MainMenu.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "280",
-    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AddNewItem.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DbHandler.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GroceryList.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainMenu.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;280&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
-      "GenericSQL",
-      "Redshift"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
+      &quot;GenericSQL&quot;,
+      &quot;Redshift&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="capstone" />
@@ -146,6 +140,7 @@
     <attachedChunks>
       <set>
         <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
       </set>
     </attachedChunks>
   </component>
@@ -164,6 +159,7 @@
       <workItem from="1764175788203" duration="54000" />
       <workItem from="1764175990312" duration="3959000" />
       <workItem from="1764395521727" duration="493000" />
+      <workItem from="1764949048641" duration="4456000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;&#10;- Add basic User, Admin, Employee, and Customer classes&#10;- Add Item and CartItem structure">
       <option name="closed" value="true" />

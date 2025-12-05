@@ -1,7 +1,5 @@
 package capstone.MainMenu;
 
-import capstone.DbHandler;
-import capstone.Item;
 import capstone.LoginPage;
 import capstone.SignUpPage.SignUpPage;
 

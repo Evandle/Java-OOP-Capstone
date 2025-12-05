@@ -31,11 +31,15 @@ public class DbHandler {
                 String role = rs.getString("role");
                 String dbUser = rs.getString("username");
 
+                User user;
                 if("ADMIN".equalsIgnoreCase(role)) {
-                    return new Admin(dbUser, password);
+                    user = new Admin(dbUser, password);
                 } else {
-                    return new Customer(dbUser, password, rs.getString("address"));
+                    user = new Customer(dbUser, password, rs.getString("address"));
                 }
+
+                user.setId(rs.getInt("user_id"));
+                return user;
             }
         } catch (SQLException e) {
             System.out.println("Login failed: " + e.getMessage());
@@ -269,5 +273,137 @@ public class DbHandler {
             e.printStackTrace();
         }
         return users;
+    }
+
+    private static boolean isItemInCart(int userId, int itemId) {
+        String query = "SELECT 1 FROM cart_items WHERE user_id = ? AND item_id = ?";
+
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setInt(1, userId);
+            pstmt.setInt(2, itemId);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                return rs.next();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static boolean addToCart(int userId, int itemId, int quantity) {
+        String query;
+
+        if (isItemInCart(userId, itemId)) {
+            query = "UPDATE cart_items SET quantity = quantity + ? WHERE user_id = ? AND item_id = ?";
+        } else {
+            query = "INSERT INTO cart_items (quantity, user_id, item_id) VALUES (?, ?, ?)";
+        }
+
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setInt(1, quantity);
+            pstmt.setInt(2, userId);
+            pstmt.setInt(3, itemId);
+
+            int rows = pstmt.executeUpdate();
+            return rows > 0;
+
+        } catch (SQLException e) {
+            System.out.println("Error adding to cart: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public static void deductStock(java.util.List<CartItem> cartItems) {
+        String query = "UPDATE items SET quantity_in_stock = quantity_in_stock - ? WHERE item_id = ?";
+
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            conn.setAutoCommit(false);
+
+            for (CartItem c : cartItems) {
+
+                pstmt.setInt(1, c.getQuantity());
+
+                pstmt.setInt(2, c.getItem().getId());
+
+                pstmt.addBatch();
+            }
+
+            pstmt.executeBatch();
+            conn.commit();
+            System.out.println("Stock updated successfully.");
+
+        } catch (SQLException e) {
+            System.out.println("Error updating stock: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    public static java.util.ArrayList<CartItem> getUserCart(int userId) {
+        java.util.ArrayList<CartItem> cart = new java.util.ArrayList<>();
+
+        String query = "SELECT c.item_id, i.name, i.price, c.quantity " +
+                "FROM cart_items c " +
+                "JOIN items i ON c.item_id = i.item_id " +
+                "WHERE c.user_id = ?";
+
+        try (java.sql.Connection conn = connect();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setInt(1, userId);
+            java.sql.ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                cart.add(new CartItem(
+                        rs.getInt("item_id"),
+                        rs.getString("name"),
+                        rs.getDouble("price"),
+                        rs.getInt("quantity")
+                ));
+            }
+        } catch (java.sql.SQLException e) {
+            System.out.println("Error fetching cart: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return cart;
+    }
+
+    public static void clearUserCart(int userId) {
+        String query = "DELETE FROM cart_items WHERE user_id = ?";
+
+        try (java.sql.Connection conn = connect();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setInt(1, userId);
+            pstmt.executeUpdate();
+            System.out.println("Cart cleared for User ID: " + userId);
+
+        } catch (java.sql.SQLException e) {
+            System.out.println("Error clearing cart: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    public static void removeFromCart(int userId, int itemId) {
+        String query = "DELETE FROM cart_items WHERE user_id = ? AND item_id = ?";
+
+        try (java.sql.Connection conn = connect();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setInt(1, userId);
+            pstmt.setInt(2, itemId);
+            pstmt.executeUpdate();
+
+        } catch (java.sql.SQLException e) {
+            System.out.println("Error removing from cart: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 }
