@@ -1,8 +1,7 @@
 package capstone.GroceryList;
 
-import capstone.DbHandler;
-import capstone.Item;
-import capstone.ItemTableModel;
+import capstone.*;
+import capstone.MainMenu.MainMenu;
 
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
@@ -139,8 +138,7 @@ public class GroceryList extends JFrame {
                 JOptionPane.showMessageDialog(this, "Please select an item to change the stock.", "Selection Error", JOptionPane.ERROR_MESSAGE);
             }
         });
-
-        doneButton.addActionListener(e -> System.exit(0));
+        doneButton.addActionListener(e -> goBack());
 
         nameAdder.addKeyListener(new KeyAdapter() {
             @Override
@@ -202,6 +200,14 @@ public class GroceryList extends JFrame {
     public static void main(String[] args) {
         new GroceryList();
     }
+    private void goBack() {
+        Admin admin = new Admin();
+        setContentPane(new AdminPage((Admin) admin));                      // go back to admin panel                     // Resize window
+        pack();
+        setLocationRelativeTo(null);
+        validate();                                                 // Refresh layout
+        repaint();
+    }
 
 }
 
@@ -217,4 +223,5 @@ class PriceRenderer extends DefaultTableCellRenderer {
         return cell;
     }
 }
+
 
