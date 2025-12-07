@@ -93,9 +93,9 @@ public class AddCustomer extends JPanel {
         JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this); // Get parent JFrame
         topFrame.getContentPane().removeAll();                              // Remove current panel
         topFrame.getContentPane().add(new AdminPage(admin));                      // go back to admin panel
-        topFrame.setSize(500, 400);                                         // Resize window
+        topFrame.setSize(485, 590);                                         // Resize window
         topFrame.setLocationRelativeTo(null);                                // Center window
-        topFrame.validate();                                                 // Refresh layout
+        topFrame.pack();                                                // Refresh layout
         topFrame.repaint();                                                  // Repaint JFrame
     }
 }

@@ -121,17 +121,20 @@ public class AdminPage extends JPanel {
             home();
         });
         addCustomerBtn.addActionListener(e->{ // go to add Customer
-            addCustomer();
+            new AddCustomer1();
+            cleaner();
         });
         addEmployeeBtn.addActionListener(e->{ // go to add Employee
-            addEmployee();
+            new AddEmployee1();
+            cleaner();
         });
         viewGroceryBtn.addActionListener(e->{ // go to view Grocery List
             new GroceryList();
-            groceryList();
+            cleaner();
         });
         removeUserBtn.addActionListener(e->{
-            home();
+            new RemoveUser();
+            cleaner();
         });
     }
 
@@ -144,7 +147,7 @@ public class AdminPage extends JPanel {
         topFrame.revalidate();
         topFrame.repaint();
     }
-    public void groceryList (){
+    public void cleaner (){
         JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
         topFrame.getContentPane();
         topFrame.setSize(500, 400);
@@ -153,21 +156,6 @@ public class AdminPage extends JPanel {
         topFrame.repaint();
         topFrame.dispose();
     }
-    public void addCustomer(){
-        JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
-        topFrame.getContentPane();
-        topFrame.setContentPane(new AddCustomer());
-        topFrame.setLocationRelativeTo(null);
-        topFrame.revalidate();
-        topFrame.repaint();
-    }
-    public void addEmployee(){
-        JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
-        topFrame.getContentPane();
-        topFrame.setContentPane(new AddEmployee(admin));
-        topFrame.setLocationRelativeTo(null);
-        topFrame.revalidate();
-        topFrame.repaint();
-    }
+
 }
 

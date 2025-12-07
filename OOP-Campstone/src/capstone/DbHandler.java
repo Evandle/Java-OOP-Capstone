@@ -406,4 +406,51 @@ public class DbHandler {
             e.printStackTrace();
         }
     }
+
+    public static java.util.ArrayList<Customer> getCustomer(){
+        java.util.ArrayList<Customer> customers = new java.util.ArrayList<>();
+
+        String query = "SELECT *  FROM users WHERE role = 'CUSTOMER'";
+        try (Connection conn = connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+
+            while (rs.next()) {
+                int id = rs.getInt("user_id");
+                String username = rs.getString("username");
+                String password = rs.getString("password");
+                String address = rs.getString("address");
+
+                Customer customer = new Customer(id, username, password, address);
+                customers.add(customer);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error fetching customers: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return customers;
+    }
+    public static java.util.ArrayList<Employee> getEmployee(){
+        java.util.ArrayList<Employee> employees = new java.util.ArrayList<>();
+
+        String query = "SELECT *  FROM users WHERE role = 'EMPLOYEE'";
+        try (Connection conn = connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+
+            while (rs.next()) {
+                int id = rs.getInt("user_id");
+                String username = rs.getString("username");
+                String password = rs.getString("password");
+                String address = rs.getString("address");
+
+                Employee employee = new Employee(id, username, password);
+                employees.add(employee);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error fetching customers: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return employees;
+    }
 }
