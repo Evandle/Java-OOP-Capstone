@@ -1,8 +1,8 @@
 package capstone.MainMenu;
 
-import capstone.LoginPage;
+import capstone.LoginPage.LoginPage;
 import capstone.SignUpPage.SignUpPage;
-import capstone.UITheme;
+import capstone.classes.UserCart;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,23 +13,23 @@ public class MainMenu extends JPanel {
 
         // ===== PANEL SETUP =====
         setLayout(new BorderLayout());
-        setBackground(UITheme.BG);
+        setBackground(UserCart.UITheme.BG);
 
         // Big padding to center content
         setBorder(BorderFactory.createEmptyBorder(120, 200, 120, 200));
 
         // ===== TITLE =====
-        JLabel title = new JLabel("🛒 S-MART", SwingConstants.CENTER);
-        title.setFont(UITheme.TITLE.deriveFont(40f));
-        title.setForeground(UITheme.TEXT);
+        JLabel title = new JLabel("S-MART", SwingConstants.CENTER);
+        title.setFont(UserCart.UITheme.TITLE.deriveFont(40f));
+        title.setForeground(UserCart.UITheme.TEXT);
 
         JLabel subtitle = new JLabel(" Welcome to ", SwingConstants.CENTER);
-        subtitle.setFont(UITheme.BODY.deriveFont(18f));
-        subtitle.setForeground(UITheme.TEXT);
+        subtitle.setFont(UserCart.UITheme.BODY.deriveFont(18f));
+        subtitle.setForeground(UserCart.UITheme.TEXT);
 
         JPanel header = new JPanel();
         header.setLayout(new BoxLayout(header, BoxLayout.Y_AXIS));
-        header.setBackground(UITheme.BG);
+        header.setBackground(UserCart.UITheme.BG);
 
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
         subtitle.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -43,8 +43,8 @@ public class MainMenu extends JPanel {
         JButton login = new JButton("Login");
         JButton signup = new JButton("Sign Up");
 
-        UITheme.styleButton(login, UITheme.GREEN);
-        UITheme.styleButton(signup, UITheme.BLUE);
+        UserCart.UITheme.styleButton(login, UserCart.UITheme.GREEN);
+        UserCart.UITheme.styleButton(signup, UserCart.UITheme.BLUE);
 
         // Make buttons BIGGER
         Dimension btnSize = new Dimension(220, 55);
@@ -52,12 +52,12 @@ public class MainMenu extends JPanel {
         signup.setPreferredSize(btnSize);
         login.setMaximumSize(btnSize);
         signup.setMaximumSize(btnSize);
-        login.setFont(UITheme.BODY.deriveFont(16f));
-        signup.setFont(UITheme.BODY.deriveFont(16f));
+        login.setFont(UserCart.UITheme.BODY.deriveFont(16f));
+        signup.setFont(UserCart.UITheme.BODY.deriveFont(16f));
 
         JPanel buttons = new JPanel();
         buttons.setLayout(new BoxLayout(buttons, BoxLayout.Y_AXIS));
-        buttons.setBackground(UITheme.BG);
+        buttons.setBackground(UserCart.UITheme.BG);
 
         login.setAlignmentX(Component.CENTER_ALIGNMENT);
         signup.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -69,7 +69,7 @@ public class MainMenu extends JPanel {
         // ===== CENTER WRAPPER =====
         JPanel center = new JPanel();
         center.setLayout(new BoxLayout(center, BoxLayout.Y_AXIS));
-        center.setBackground(UITheme.BG);
+        center.setBackground(UserCart.UITheme.BG);
 
         center.add(header);
         center.add(buttons);

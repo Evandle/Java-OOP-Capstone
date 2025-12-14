@@ -4,11 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a390bf8-92b4-4b51-95c3-8165bf849d5d" name="Changes" comment="redesigned main menu, login page, sign up page, customer page.&#10;Added log out button and action on customer page">
+    <list default="true" id="0a390bf8-92b4-4b51-95c3-8165bf849d5d" name="Changes" comment="Added getUsers(); function in the database handler that returns an ArrayList of all users.">
+      <change afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/ManageUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dabf9baa-f124-42ed-91f5-120202b03b95.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dabf9baa-f124-42ed-91f5-120202b03b95.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dabf9baa-f124-42ed-91f5-120202b03b95/storage_v2/_src_/schema/main.uQUzAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dabf9baa-f124-42ed-91f5-120202b03b95/storage_v2/_src_/schema/main.uQUzAA.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AdminPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AdminPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capstone.db" beforeDir="false" afterPath="$PROJECT_DIR$/capstone.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/AdminPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/AdminPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AddCustomer1.form" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/ManageUsers.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AddCustomer1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AddEmployee1.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AddEmployee1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AddNewItem.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AddNewItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AdminPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AdminPage/AdminPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/CartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CustomerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CustomerPage/CustomerPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/DbHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/DbHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/GroceryList/GroceryList.form" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/GroceryList/GroceryList.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/GroceryList/GroceryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/GroceryList/GroceryList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/ItemTableModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/LoginPage/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/MainMenu/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/MainMenu/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/ReceiptGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/ReceiptGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/RemoveUser.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/RemoveUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/SignUpPage/SignUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/SignUpPage/SignUpPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/UITheme.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/UserCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/UserCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/capstone.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/AddNewItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/AdminPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CartItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CustomerPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/DbHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/LoginPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/SignUpPage/SignUpPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/SignUpPage/SignUpPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/User.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +68,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -33,8 +78,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Evandle/Java-OOP-Capstone&quot;,
-    &quot;accountId&quot;: &quot;68b82401-d94c-4e20-81de-cfa2b8a44391&quot;
+    &quot;url&quot;: &quot;https://github.com/Evandle/Java-OOP-Capstone/&quot;,
+    &quot;accountId&quot;: &quot;66918062-74d9-476f-8ee4-a23e1d5de142&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -61,27 +106,29 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.AddCustomer1.executor": "Run",
-    "Application.AddEmployee1.executor": "Run",
     "Application.AddNewItem.executor": "Run",
-    "Application.AdminPage11.executor": "Run",
+    "Application.AddUser.executor": "Run",
+    "Application.AdminPage.executor": "Run",
     "Application.DbHandler.executor": "Run",
     "Application.GroceryList.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.MainMenu.executor": "Run",
+    "Application.ManageUsers.executor": "Run",
+    "Application.MangeItems.executor": "Run",
     "Application.RemoveUser.executor": "Run",
+    "Application.UserCart.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "291",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "379",
     "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "extract.method.default.visibility": "private",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/caimo/IdeaProjects/Java-OOP-Capstone/OOP-Campstone/src/capstone",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,7 +137,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "configurable.group.language",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -107,15 +154,70 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="capstone" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\caimo\IdeaProjects\Java-OOP-Capstone\OOP-Campstone\src\capstone" />
-      <recent name="D:\IntelliJ\PRACTICES\Java-OOP-Capstone\OOP-Campstone\src\capstone\AdminPage11" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\gab\IdeaProjects\Java-OOP-Capstone\OOP-Campstone\src\capstone" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="OOP-Campstone" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ManageUsers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="capstone.ManageUsers" />
+      <module name="OOP-Campstone" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="capstone.AdminPage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MangeItems" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="capstone.MangeItems" />
+      <module name="OOP-Campstone" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="capstone.AdminPage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RemoveUser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="capstone.RemoveUser" />
+      <module name="OOP-Campstone" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="capstone.AdminPage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserCart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="capstone.classes.UserCart" />
+      <module name="OOP-Campstone" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="capstone.classes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Java-OOP-Capstone" />
       <method v="2">
@@ -127,11 +229,21 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ManageUsers" />
+        <item itemvalue="Application.MangeItems" />
+        <item itemvalue="Application.RemoveUser" />
+        <item itemvalue="Application.UserCart" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
         <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
       </set>
     </attachedChunks>
   </component>
@@ -223,23 +335,7 @@
       <option name="project" value="LOCAL" />
       <updated>1764608318231</updated>
     </task>
-    <task id="LOCAL-00010" summary="Added getUsers(); function in the database handler that returns an ArrayList of all users.">
-      <option name="closed" value="true" />
-      <created>1765123978438</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1765123978438</updated>
-    </task>
-    <task id="LOCAL-00011" summary="redesigned main menu, login page, sign up page, customer page.&#10;Added log out button and action on customer page">
-      <option name="closed" value="true" />
-      <created>1765711555894</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1765711555894</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,9 +362,7 @@
     <MESSAGE value="idk what i did" />
     <MESSAGE value="Draft for customer page" />
     <MESSAGE value="Added the receipt class in CartItem.java. Added Password confirmation in SignUpPage.java" />
-    <MESSAGE value="Added getUsers(); function in the database handler that returns an ArrayList of all users." />
-    <MESSAGE value="redesigned main menu, login page, sign up page, customer page.&#10;Added log out button and action on customer page" />
-    <option name="LAST_COMMIT_MESSAGE" value="redesigned main menu, login page, sign up page, customer page.&#10;Added log out button and action on customer page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the receipt class in CartItem.java. Added Password confirmation in SignUpPage.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

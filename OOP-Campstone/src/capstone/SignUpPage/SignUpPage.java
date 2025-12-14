@@ -1,8 +1,8 @@
 package capstone.SignUpPage;
 
-import capstone.DbHandler;
+import capstone.classes.DbHandler;
 import capstone.MainMenu.MainMenu;
-import capstone.UITheme;
+import capstone.classes.UserCart;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,7 +25,7 @@ public class SignUpPage extends JPanel {
         // ===== PANEL SETUP =====
         //GridBagLayout for flexible and centered layout
         setLayout(new GridBagLayout());
-        setBackground(UITheme.BG);
+        setBackground(UserCart.UITheme.BG);
 
         //padding around the panel to center content nicely
         setBorder(BorderFactory.createEmptyBorder(60, 160, 60, 160));
@@ -40,49 +40,49 @@ public class SignUpPage extends JPanel {
 
         // ===== TITLE =====
         JLabel title = new JLabel("Create Account", SwingConstants.CENTER);
-        title.setFont(UITheme.TITLE.deriveFont(30f));
-        title.setForeground(UITheme.TEXT);
+        title.setFont(UserCart.UITheme.TITLE.deriveFont(30f));
+        title.setForeground(UserCart.UITheme.TEXT);
         add(title, gbc);
 
         // ===== FORM PANEL =====
         // Holds labels and input fields in a grid
         JPanel form = new JPanel(new GridLayout(4, 2, 16, 18));
-        form.setBackground(UITheme.BG);
+        form.setBackground(UserCart.UITheme.BG);
 
         // Username
         JLabel userLabel = new JLabel("Username");
-        userLabel.setFont(UITheme.BODY);
-        userLabel.setForeground(UITheme.TEXT);
+        userLabel.setFont(UserCart.UITheme.BODY);
+        userLabel.setForeground(UserCart.UITheme.TEXT);
 
         usernameField = new JTextField();
-        usernameField.setFont(UITheme.BODY);
+        usernameField.setFont(UserCart.UITheme.BODY);
         usernameField.setPreferredSize(new Dimension(220, 36));
 
         // Password
         JLabel passLabel = new JLabel("Password");
-        passLabel.setFont(UITheme.BODY);
-        passLabel.setForeground(UITheme.TEXT);
+        passLabel.setFont(UserCart.UITheme.BODY);
+        passLabel.setForeground(UserCart.UITheme.TEXT);
 
         passwordField = new JPasswordField();
-        passwordField.setFont(UITheme.BODY);
+        passwordField.setFont(UserCart.UITheme.BODY);
         passwordField.setPreferredSize(new Dimension(220, 36));
 
         // Confirm Password
         JLabel confirmLabel = new JLabel("Confirm Password");
-        confirmLabel.setFont(UITheme.BODY);
-        confirmLabel.setForeground(UITheme.TEXT);
+        confirmLabel.setFont(UserCart.UITheme.BODY);
+        confirmLabel.setForeground(UserCart.UITheme.TEXT);
 
         passwordConfirmField = new JPasswordField();
-        passwordConfirmField.setFont(UITheme.BODY);
+        passwordConfirmField.setFont(UserCart.UITheme.BODY);
         passwordConfirmField.setPreferredSize(new Dimension(220, 36));
 
         // Address
         JLabel addressLabel = new JLabel("Address");
-        addressLabel.setFont(UITheme.BODY);
-        addressLabel.setForeground(UITheme.TEXT);
+        addressLabel.setFont(UserCart.UITheme.BODY);
+        addressLabel.setForeground(UserCart.UITheme.TEXT);
 
         addressField = new JTextField();
-        addressField.setFont(UITheme.BODY);
+        addressField.setFont(UserCart.UITheme.BODY);
         addressField.setPreferredSize(new Dimension(220, 36));
 
         // Add components to the form panel
@@ -104,16 +104,26 @@ public class SignUpPage extends JPanel {
         backButton = new JButton("Back");
 
         // Apply theme styles
-        UITheme.styleButton(signUpButton, UITheme.GREEN);
-        UITheme.styleButton(backButton, UITheme.BLUE);
+        UserCart.UITheme.styleButton(signUpButton, UserCart.UITheme.GREEN);
+        UserCart.UITheme.styleButton(backButton, UserCart.UITheme.BLUE);
 
-        signUpButton.setFont(UITheme.BODY);
-        backButton.setFont(UITheme.BODY);
+        // ===== STANDARD SIZING =====
+        // Matched to text fields (220 width, 36 height) for consistency
+        Dimension standardSize = new Dimension(220, 36);
+
+        signUpButton.setPreferredSize(standardSize);
+        signUpButton.setMaximumSize(standardSize); // Ensures BoxLayout respects width
+
+        backButton.setPreferredSize(standardSize);
+        backButton.setMaximumSize(standardSize);
+
+        signUpButton.setFont(UserCart.UITheme.BODY);
+        backButton.setFont(UserCart.UITheme.BODY);
 
         // Stack buttons vertically
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
-        buttonPanel.setBackground(UITheme.BG);
+        buttonPanel.setBackground(UserCart.UITheme.BG);
 
         signUpButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         backButton.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -129,6 +139,7 @@ public class SignUpPage extends JPanel {
         // ===== ACTION LISTENERS =====
         signUpButton.addActionListener(e -> signUp());
         backButton.addActionListener(e -> goBack());
+
     }
 
     /** Handles user registration when Sign Up button is clicked **/
@@ -246,5 +257,6 @@ public class SignUpPage extends JPanel {
         frame.setContentPane(new MainMenu());
         frame.revalidate();
         frame.repaint();
+        frame.setVisible(true);
     }
 }

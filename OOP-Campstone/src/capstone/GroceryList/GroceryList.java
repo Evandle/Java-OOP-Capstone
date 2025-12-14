@@ -1,9 +1,15 @@
 package capstone.GroceryList;
 
-import capstone.*;
-import capstone.MainMenu.MainMenu;
+import capstone.classes.DbHandler;
+import capstone.classes.Item;
+// Make sure UITheme is imported
+import capstone.classes.UserCart;
 
 import javax.swing.*;
+import javax.swing.plaf.ComponentUI;
+import javax.swing.table.JTableHeader; // Import added for header styling
+import javax.swing.plaf.basic.BasicButtonUI; // Import for custom button UI
+import java.awt.*; // Imported for Color/Font usage if needed locally
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -35,7 +41,50 @@ public class GroceryList extends JFrame {
     public GroceryList(){
         setContentPane(groceryListPanel);
         setSize(500,600);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        // ===== APPLY THEME =====
+        // 1. Backgrounds
+        groceryListPanel.setBackground(UserCart.UITheme.BG);
+        addItemRadioButton.setBackground(UserCart.UITheme.BG);
+        removeItemRadioButton.setBackground(UserCart.UITheme.BG);
+        changeStockRadioButton.setBackground(UserCart.UITheme.BG);
+
+        // 2. Labels
+        titleLabel.setFont(UserCart.UITheme.TITLE);
+        titleLabel.setForeground(UserCart.UITheme.TEXT);
+
+        // Optional: Style other labels with BODY font
+        JLabel[] labels = {itemsScrollLabel, nameLabel, categoryLabel, priceLabel, quantityLabel};
+        for (JLabel lbl : labels) {
+            if (lbl != null) {
+                lbl.setFont(UserCart.UITheme.BODY);
+                lbl.setForeground(UserCart.UITheme.TEXT);
+            }
+        }
+
+        // 3. Buttons
+        // We apply the color using your theme, and the Shape using our new global UI class
+        applyGlobalButtonStyle(addNewButton, UserCart.UITheme.BLUE);
+        applyGlobalButtonStyle(changeItemStockButton, UserCart.UITheme.BLUE);
+        applyGlobalButtonStyle(removeItemButton, UserCart.UITheme.BLUE);
+        applyGlobalButtonStyle(doneButton, UserCart.UITheme.GREEN);
+
+        // 4. Table Styling
+        table1.setFont(UserCart.UITheme.BODY);
+        table1.setRowHeight(28); // Taller rows are easier to read
+        table1.setGridColor(new Color(224, 224, 224)); // Light gray grid
+        table1.setSelectionBackground(UserCart.UITheme.BLUE); // Blue background when selected
+        table1.setSelectionForeground(Color.WHITE); // White text when selected
+        table1.setShowVerticalLines(false); // Cleaner look
+
+        // Stylize Header
+        JTableHeader header = table1.getTableHeader();
+        header.setFont(new Font("Arial", Font.BOLD, 14));
+        header.setBackground(UserCart.UITheme.BLUE);
+        header.setForeground(Color.WHITE);
+        // =======================
+
         changeItemStockButton.setVisible(false);
         removeItemButton.setVisible(false);
         addItemRadioButton.setSelected(true);
@@ -175,11 +224,34 @@ public class GroceryList extends JFrame {
         });
     }
 
+    // ===== GLOBAL STYLE APPLICATION =====
+    // You can move this method and the RoundedButtonUI class below to your UITheme.java
+    // to make it accessible everywhere in your project.
+    private void applyGlobalButtonStyle(JButton button, Color color) {
+        UserCart.UITheme.styleButton(button, color); // Sets background color
+        button.setUI(new RoundedButtonUI()); // Sets the shape
+        button.setContentAreaFilled(false);
+        button.setBorderPainted(false);
+        button.setOpaque(false);
+    }
+
     private void loadInventory() {
         java.util.List<Item> itemsFromDb = DbHandler.getItems();
-        ItemTableModel newModel = new ItemTableModel(itemsFromDb);
+        UserCart.ItemTableModel newModel = new UserCart.ItemTableModel(itemsFromDb);
         table1.setModel(newModel);
+
+        // ===== SET COLUMN WIDTHS =====
+        if (table1.getColumnCount() >= 5) {
+            table1.getColumnModel().getColumn(0).setPreferredWidth(40);  // ID
+            table1.getColumnModel().getColumn(1).setPreferredWidth(220); // Name
+            table1.getColumnModel().getColumn(2).setPreferredWidth(80);  // Price
+            table1.getColumnModel().getColumn(3).setPreferredWidth(60);  // Stock
+            table1.getColumnModel().getColumn(4).setPreferredWidth(120); // Category
+        }
+
         table1.getColumnModel().getColumn(2).setCellRenderer(new PriceRenderer());
+        table1.getColumnModel().getColumn(4).setCellRenderer(new CategoryRenderer());
+
         categoryContainer.removeAllItems();
         java.util.List<String> categories = DbHandler.getCategoryNames();
         for (String cat : categories) {
@@ -201,14 +273,36 @@ public class GroceryList extends JFrame {
         new GroceryList();
     }
     private void goBack() {
-        Admin admin = new Admin();
-        setContentPane(new AdminPage((Admin) admin));                      // go back to admin panel                     // Resize window
-        pack();
-        setLocationRelativeTo(null);
-        validate();                                                 // Refresh layout
-        repaint();
+        this.dispose();
+    }
+}
+
+class RoundedButtonUI extends BasicButtonUI {
+    public static ComponentUI createUI(JComponent c) {
+        return new RoundedButtonUI();
     }
 
+    @Override
+    public void paint(Graphics g, JComponent c) {
+        AbstractButton b = (AbstractButton) c;
+        Graphics2D g2 = (Graphics2D) g.create();
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        Color color = c.getBackground();
+
+        if (b.getModel().isPressed()) {
+            color = color.darker();
+        } else if (b.getModel().isRollover()) {
+            color = color.brighter();
+        }
+
+        g2.setColor(color);
+
+        g2.fillRoundRect(0, 0, c.getWidth(), c.getHeight(), 20, 20);
+
+        g2.dispose();
+        super.paint(g, c);
+    }
 }
 
 class PriceRenderer extends DefaultTableCellRenderer {
@@ -224,4 +318,36 @@ class PriceRenderer extends DefaultTableCellRenderer {
     }
 }
 
+class CategoryRenderer extends DefaultTableCellRenderer {
+    @Override
+    public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+        super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 
+        int id = -1;
+        if (value instanceof Number) {
+            id = ((Number) value).intValue();
+        } else if (value instanceof String) {
+            try {
+                id = Integer.parseInt((String) value);
+            } catch (NumberFormatException ignored) {}
+        }
+
+        if (id != -1) {
+            setText(getCategoryName(id));
+        }
+        return this;
+    }
+
+    private String getCategoryName(int id) {
+        return switch (id) {
+            case 1 -> "Frozen Goods";
+            case 2 -> "General Necessities";
+            case 3 -> "Drinks";
+            case 4 -> "Snacks";
+            case 5 -> "Canned Goods";
+            case 6 -> "Washing Necessities";
+            case 7 -> "Bath";
+            default -> String.valueOf(id);
+        };
+    }
+}
