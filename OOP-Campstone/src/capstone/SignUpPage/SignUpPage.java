@@ -2,157 +2,249 @@ package capstone.SignUpPage;
 
 import capstone.DbHandler;
 import capstone.MainMenu.MainMenu;
+import capstone.UITheme;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class SignUpPage extends JPanel {
 
-    // GUI components
-    private JTextField usernameField;      // Input field for entering username
-    private JPasswordField passwordField;  // Input field for entering password
+    // ===== FORM FIELDS =====
+    // Text fields for user input
+    private JTextField usernameField;
+    private JPasswordField passwordField;
     private JPasswordField passwordConfirmField;
-    private JTextField addressField;       // Input field for entering address
-    private JButton signUpButton;          // Button to register a new user
-    private JButton backButton;            // Button to return to the main menu
+    private JTextField addressField;
+
+    // Buttons for actions
+    private JButton signUpButton;
+    private JButton backButton;
 
     public SignUpPage() {
-        // Use GridBagLayout for flexible positioning
-        setLayout(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(5,5,5,5); // Spacing around components
 
-        // Title Label
-        JLabel title = new JLabel("User Sign Up");
-        title.setFont(new Font("SansSerif", Font.BOLD, 22)); // Font style and size
-        gbc.gridx = 0; gbc.gridy = 0; gbc.gridwidth = 2;      // Span two columns
+        // ===== PANEL SETUP =====
+        //GridBagLayout for flexible and centered layout
+        setLayout(new GridBagLayout());
+        setBackground(UITheme.BG);
+
+        //padding around the panel to center content nicely
+        setBorder(BorderFactory.createEmptyBorder(60, 160, 60, 160));
+
+        //controls component positioning
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(12, 12, 12, 12); // spacing between components
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridwidth = 2; // span across two columns
+
+        // ===== TITLE =====
+        JLabel title = new JLabel("Create Account", SwingConstants.CENTER);
+        title.setFont(UITheme.TITLE.deriveFont(30f));
+        title.setForeground(UITheme.TEXT);
         add(title, gbc);
 
-        // Username Label and Field
-        gbc.gridwidth = 1; // Reset grid width
-        gbc.gridx = 0; gbc.gridy = 1;
-        add(new JLabel("Username:"), gbc);
-        usernameField = new JTextField(15); // Input field of width 15
-        gbc.gridx = 1;
-        add(usernameField, gbc);
+        // ===== FORM PANEL =====
+        // Holds labels and input fields in a grid
+        JPanel form = new JPanel(new GridLayout(4, 2, 16, 18));
+        form.setBackground(UITheme.BG);
 
-        // Password Label and Field
-        gbc.gridx = 0; gbc.gridy = 2;
-        add(new JLabel("Password:"), gbc);
-        passwordField = new JPasswordField(15); // Input field hides characters
-        gbc.gridx = 1;
-        add(passwordField, gbc);
+        // Username
+        JLabel userLabel = new JLabel("Username");
+        userLabel.setFont(UITheme.BODY);
+        userLabel.setForeground(UITheme.TEXT);
 
-        // Confirm Password Label and Field (Row 3)
-        gbc.gridx = 0; gbc.gridy = 3;
-        add(new JLabel("Confirm Password:"), gbc);
-        passwordConfirmField = new JPasswordField(15); // Input field hides characters
-        gbc.gridx = 1;
-        add(passwordConfirmField, gbc);
+        usernameField = new JTextField();
+        usernameField.setFont(UITheme.BODY);
+        usernameField.setPreferredSize(new Dimension(220, 36));
 
-        // Address Label and Field (Row 4)
-        gbc.gridx = 0; gbc.gridy = 4;
-        add(new JLabel("Address:"), gbc);
-        addressField = new JTextField(15);
-        gbc.gridx = 1;
-        add(addressField, gbc);
+        // Password
+        JLabel passLabel = new JLabel("Password");
+        passLabel.setFont(UITheme.BODY);
+        passLabel.setForeground(UITheme.TEXT);
 
-        // Buttons: Sign Up and Back
+        passwordField = new JPasswordField();
+        passwordField.setFont(UITheme.BODY);
+        passwordField.setPreferredSize(new Dimension(220, 36));
+
+        // Confirm Password
+        JLabel confirmLabel = new JLabel("Confirm Password");
+        confirmLabel.setFont(UITheme.BODY);
+        confirmLabel.setForeground(UITheme.TEXT);
+
+        passwordConfirmField = new JPasswordField();
+        passwordConfirmField.setFont(UITheme.BODY);
+        passwordConfirmField.setPreferredSize(new Dimension(220, 36));
+
+        // Address
+        JLabel addressLabel = new JLabel("Address");
+        addressLabel.setFont(UITheme.BODY);
+        addressLabel.setForeground(UITheme.TEXT);
+
+        addressField = new JTextField();
+        addressField.setFont(UITheme.BODY);
+        addressField.setPreferredSize(new Dimension(220, 36));
+
+        // Add components to the form panel
+        form.add(userLabel);
+        form.add(usernameField);
+        form.add(passLabel);
+        form.add(passwordField);
+        form.add(confirmLabel);
+        form.add(passwordConfirmField);
+        form.add(addressLabel);
+        form.add(addressField);
+
+        // Add form panel below title
+        gbc.gridy++;
+        add(form, gbc);
+
+        // ===== BUTTONS =====
         signUpButton = new JButton("Sign Up");
         backButton = new JButton("Back");
-        JPanel buttonPanel = new JPanel(); // Panel to hold buttons
+
+        // Apply theme styles
+        UITheme.styleButton(signUpButton, UITheme.GREEN);
+        UITheme.styleButton(backButton, UITheme.BLUE);
+
+        signUpButton.setFont(UITheme.BODY);
+        backButton.setFont(UITheme.BODY);
+
+        // Stack buttons vertically
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
+        buttonPanel.setBackground(UITheme.BG);
+
+        signUpButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        backButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+
         buttonPanel.add(signUpButton);
+        buttonPanel.add(Box.createVerticalStrut(12)); // space between buttons
         buttonPanel.add(backButton);
 
-        gbc.gridx = 0; gbc.gridy = 5; gbc.gridwidth = 2; // Span two columns
+        // Add buttons under the form
+        gbc.gridy++;
         add(buttonPanel, gbc);
 
-        // Button Action Listeners
-        signUpButton.addActionListener(e -> signUp()); // Register user when clicked
-        backButton.addActionListener(e -> goBack());   // Go back to main menu
+        // ===== ACTION LISTENERS =====
+        signUpButton.addActionListener(e -> signUp());
+        backButton.addActionListener(e -> goBack());
     }
 
-    /** Handles user registration **/
+    /** Handles user registration when Sign Up button is clicked **/
 
     private void signUp() {
-        String username = usernameField.getText().trim();                   // Get entered username
-        String password = new String(passwordField.getPassword()).trim(); // Get entered password
-        String address = addressField.getText().trim();               //Get entered address
-        String confirmPassword = new String(passwordConfirmField.getPassword()).trim();
 
-        // Validate that both fields are filled
-        if(username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || address.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Sign Up Error", JOptionPane.ERROR_MESSAGE);
+        // Retrieve user input
+        String username = usernameField.getText().trim();
+        String password = new String(passwordField.getPassword()).trim();
+        String confirmPassword = new String(passwordConfirmField.getPassword()).trim();
+        String address = addressField.getText().trim();
+
+        // Validate that all fields are filled
+        if (username.isEmpty() || password.isEmpty()
+                || confirmPassword.isEmpty() || address.isEmpty()) {
+
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Please fill in all fields.",
+                    "Sign Up Error",
+                    JOptionPane.ERROR_MESSAGE
+            );
             return;
         }
 
-        if (!passwordConfirmChecker(password,  confirmPassword)) {
-            JOptionPane.showMessageDialog(this,
+        // Check if passwords match
+        if (!passwordConfirmChecker(password, confirmPassword)) {
+            JOptionPane.showMessageDialog(
+                    this,
                     "Password confirmation doesn't match.",
                     "Password Error",
-                    JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.ERROR_MESSAGE
+            );
             return;
         }
 
+        // Check password strength
         if (!passwordChecker(password)) {
-            JOptionPane.showMessageDialog(this,
+            JOptionPane.showMessageDialog(
+                    this,
                     "Password requires at least 9 characters, a symbol, a capital letter, and a number.",
                     "Password Error",
-                    JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.ERROR_MESSAGE
+            );
             return;
         }
 
         try {
-            // Hardcode role as CUSTOMER for new users
-            boolean success = DbHandler.registerUser(username, password, "CUSTOMER", address);
-            if(success) {
-                // Show success message and return to main menu
-                JOptionPane.showMessageDialog(this, "Sign up successful! You can now log in.", "Success", JOptionPane.INFORMATION_MESSAGE);
-                goBack();
+            // Register user as CUSTOMER
+            boolean success = DbHandler.registerUser(
+                    username, password, "CUSTOMER", address
+            );
+
+            if (success) {
+                JOptionPane.showMessageDialog(
+                        this,
+                        "Sign up successful! You can now log in.",
+                        "Success",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
+                goBack(); // Return to main menu
             } else {
-                // Show error if username is taken or registration failed
-                JOptionPane.showMessageDialog(this, "Username is already taken or an error occurred.", "Sign Up Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(
+                        this,
+                        "Username is already taken or an error occurred.",
+                        "Sign Up Error",
+                        JOptionPane.ERROR_MESSAGE
+                );
             }
-        } catch(Exception ex) {
-            // Handle database connection errors
-            JOptionPane.showMessageDialog(this, "Error connecting to database: " + ex.getMessage(), "Sign Up Error", JOptionPane.ERROR_MESSAGE);
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Error connecting to database: " + ex.getMessage(),
+                    "Sign Up Error",
+                    JOptionPane.ERROR_MESSAGE
+            );
         }
     }
 
-    // a method that checks if the password contains at least 9 characters, number, special character, and a capital letter
+    /**
+     * Checks password strength:
+     * - At least 9 characters
+     * - At least 1 uppercase letter
+     * - At least 1 number
+     * - At least 1 special character
+     */
     public boolean passwordChecker(String password) {
-        if(password.length() < 9) {
-            return false;
-        }
+
+        if (password.length() < 9) return false;
 
         boolean hasUpper = false;
         boolean hasNumber = false;
         boolean hasSpecial = false;
 
-        for(char c : password.toCharArray()) {
-            if(Character.isUpperCase(c)) { hasUpper =  true;}
-            else if(Character.isDigit(c)) { hasNumber = true;}
-            else if(!Character.isLetterOrDigit(c)) { hasSpecial =  true;}
+        for (char c : password.toCharArray()) {
+            if (Character.isUpperCase(c)) hasUpper = true;
+            else if (Character.isDigit(c)) hasNumber = true;
+            else if (!Character.isLetterOrDigit(c)) hasSpecial = true;
         }
 
         return hasUpper && hasNumber && hasSpecial;
     }
 
+    /** Confirms that password and confirm password match **/
+
     public boolean passwordConfirmChecker(String password, String confirmPassword) {
-        if(!password.equals(confirmPassword)) {
-            return false;
-        }
-        return true;
+        return password.equals(confirmPassword);
     }
 
-    /** Returns to the main menu **/
+    /** Returns the user back to the main menu **/
+
     private void goBack() {
-        JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this); // Get parent JFrame
-        topFrame.getContentPane().removeAll();                              // Remove current panel
-        topFrame.getContentPane().add(new MainMenu());                      // Add main menu panel
-        topFrame.setSize(500, 400);                                         // Resize window
-        topFrame.setLocationRelativeTo(null);                                // Center window
-        topFrame.validate();                                                 // Refresh layout
-        topFrame.repaint();                                                  // Repaint JFrame
+        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        frame.setContentPane(new MainMenu());
+        frame.revalidate();
+        frame.repaint();
     }
 }

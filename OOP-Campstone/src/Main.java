@@ -11,7 +11,6 @@ public class Main {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Grocery Shopping System");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(500, 400);
             frame.setContentPane(new MainMenu()); // Start with MainMenu
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
