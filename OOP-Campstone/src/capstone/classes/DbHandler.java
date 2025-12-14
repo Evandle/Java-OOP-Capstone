@@ -9,10 +9,61 @@ public class DbHandler {
         try {
             Connection conn = DriverManager.getConnection(CONNECTION_STRING);
             System.out.println("Connected to database successfully at: " + CONNECTION_STRING);
+            initializeDatabase(conn);
             return conn;
         } catch(SQLException e) {
             System.out.println("Database connection failed: " + e.getMessage());
             return null;
+        }
+    }
+
+    private static void initializeDatabase(Connection conn) throws SQLException {
+        String createUsersTable = "CREATE TABLE IF NOT EXISTS users (" +
+                "user_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "username TEXT UNIQUE NOT NULL, " +
+                "password TEXT NOT NULL, " +
+                "role TEXT NOT NULL, " +
+                "address TEXT)";
+
+        String createCategoriesTable = "CREATE TABLE IF NOT EXISTS categories (" +
+                "category_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "name TEXT UNIQUE NOT NULL)";
+
+        String createItemsTable = "CREATE TABLE IF NOT EXISTS items (" +
+                "item_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "name TEXT UNIQUE NOT NULL, " +
+                "price REAL NOT NULL, " +
+                "quantity_in_stock INTEGER NOT NULL, " +
+                "category_id INTEGER, " +
+                "FOREIGN KEY (category_id) REFERENCES categories(category_id))";
+
+        String createCartItemsTable = "CREATE TABLE IF NOT EXISTS cart_items (" +
+                "user_id INTEGER, " +
+                "item_id INTEGER, " +
+                "quantity INTEGER NOT NULL, " +
+                "PRIMARY KEY (user_id, item_id), " +
+                "FOREIGN KEY (user_id) REFERENCES users(user_id), " +
+                "FOREIGN KEY (item_id) REFERENCES items(item_id))";
+
+        try (Statement stmt = conn.createStatement()) {
+            stmt.execute(createUsersTable);
+            stmt.execute(createCategoriesTable);
+            stmt.execute(createItemsTable);
+            stmt.execute(createCartItemsTable);
+
+            // Insert default admin user if not exists
+            String insertAdmin = "INSERT OR IGNORE INTO users (username, password, role) VALUES ('admin', 'admin', 'ADMIN')";
+            stmt.execute(insertAdmin);
+
+            // Insert default categories
+            String insertFruits = "INSERT OR IGNORE INTO categories (name) VALUES ('Fruits')";
+            String insertVegetables = "INSERT OR IGNORE INTO categories (name) VALUES ('Vegetables')";
+            String insertDairy = "INSERT OR IGNORE INTO categories (name) VALUES ('Dairy')";
+            stmt.execute(insertFruits);
+            stmt.execute(insertVegetables);
+            stmt.execute(insertDairy);
+
+            System.out.println("Database initialized successfully.");
         }
     }
 
