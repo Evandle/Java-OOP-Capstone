@@ -1,4 +1,4 @@
-package capstone;
+package capstone.classes;
 
 import java.util.ArrayList;
 import java.util.List;

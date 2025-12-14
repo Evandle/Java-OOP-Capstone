@@ -1,4 +1,4 @@
-package capstone;
+package capstone.classes;
 
 public class CartItem {
     private final Item item;

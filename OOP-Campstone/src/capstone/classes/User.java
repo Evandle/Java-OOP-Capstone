@@ -1,4 +1,4 @@
-package capstone;
+package capstone.classes;
 
 public class User {
     private int id;

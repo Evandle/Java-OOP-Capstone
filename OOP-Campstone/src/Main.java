@@ -1,4 +1,4 @@
-import capstone.DbHandler;
+import capstone.classes.DbHandler;
 import capstone.MainMenu.MainMenu;
 import javax.swing.*;
 
@@ -13,8 +13,8 @@ public class Main {
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setContentPane(new MainMenu()); // Start with MainMenu
             frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
             frame.setResizable(false);
+            frame.setVisible(true);
         });
     }
 

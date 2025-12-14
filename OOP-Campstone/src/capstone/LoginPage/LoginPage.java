@@ -1,7 +1,9 @@
-package capstone;
+package capstone.LoginPage;
 
+import capstone.AdminPage.AdminPage;
+import capstone.CustomerPage.CustomerPage;
 import capstone.MainMenu.MainMenu;
-import capstone.UITheme;
+import capstone.classes.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,7 +23,7 @@ public class LoginPage extends JPanel {
         // ===== PANEL SETUP =====
         // GridBagLayout allows flexible positioning
         setLayout(new GridBagLayout());
-        setBackground(UITheme.BG);
+        setBackground(UserCart.UITheme.BG);
 
         // Padding to center content
         setBorder(BorderFactory.createEmptyBorder(80, 180, 80, 180));
@@ -35,29 +37,30 @@ public class LoginPage extends JPanel {
 
         // ===== TITLE =====
         JLabel title = new JLabel("Customer Login", SwingConstants.CENTER);
-        title.setFont(UITheme.TITLE.deriveFont(32f));
-        title.setForeground(UITheme.TEXT);
+        title.setFont(UserCart.UITheme.TITLE.deriveFont(32f));
+        title.setForeground(UserCart.UITheme.TEXT);
         add(title, gbc);
 
         // ===== FORM PANEL =====
         // Holds username and password inputs
         JPanel form = new JPanel(new GridLayout(2, 2, 15, 20));
-        form.setBackground(UITheme.BG);
+        form.setBackground(UserCart.UITheme.BG);
 
         JLabel userLabel = new JLabel("Username");
-        userLabel.setFont(UITheme.BODY.deriveFont(15f));
-        userLabel.setForeground(UITheme.TEXT);
+        userLabel.setFont(UserCart.UITheme.BODY.deriveFont(15f));
+        userLabel.setForeground(UserCart.UITheme.TEXT);
 
         usernameField = new JTextField();
-        usernameField.setFont(UITheme.BODY.deriveFont(15f));
+        usernameField.setFont(UserCart.UITheme.BODY.deriveFont(15f));
+        // Standard Text Field Size
         usernameField.setPreferredSize(new Dimension(220, 36));
 
         JLabel passLabel = new JLabel("Password");
-        passLabel.setFont(UITheme.BODY.deriveFont(15f));
-        passLabel.setForeground(UITheme.TEXT);
+        passLabel.setFont(UserCart.UITheme.BODY.deriveFont(15f));
+        passLabel.setForeground(UserCart.UITheme.TEXT);
 
         passwordField = new JPasswordField();
-        passwordField.setFont(UITheme.BODY.deriveFont(15f));
+        passwordField.setFont(UserCart.UITheme.BODY.deriveFont(15f));
         passwordField.setPreferredSize(new Dimension(220, 36));
 
         // Add components to form panel
@@ -73,19 +76,25 @@ public class LoginPage extends JPanel {
         loginButton = new JButton("Login");
         backButton = new JButton("Back");
 
-        UITheme.styleButton(loginButton, UITheme.GREEN);
-        UITheme.styleButton(backButton, UITheme.BLUE);
+        UserCart.UITheme.styleButton(loginButton, UserCart.UITheme.GREEN);
+        UserCart.UITheme.styleButton(backButton, UserCart.UITheme.BLUE);
 
-        Dimension btnSize = new Dimension(140, 45);
-        loginButton.setPreferredSize(btnSize);
-        backButton.setPreferredSize(btnSize);
+        // ===== STANDARD SIZING =====
+        // Matched to text fields (220 width, 36 height) for consistency
+        Dimension standardSize = new Dimension(220, 36);
 
-        loginButton.setFont(UITheme.BODY.deriveFont(15f));
-        backButton.setFont(UITheme.BODY.deriveFont(15f));
+        loginButton.setPreferredSize(standardSize);
+        loginButton.setMaximumSize(standardSize); // Ensures BoxLayout respects width
+
+        backButton.setPreferredSize(standardSize);
+        backButton.setMaximumSize(standardSize);
+
+        loginButton.setFont(UserCart.UITheme.BODY.deriveFont(15f));
+        backButton.setFont(UserCart.UITheme.BODY.deriveFont(15f));
 
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
-        buttonPanel.setBackground(UITheme.BG);
+        buttonPanel.setBackground(UserCart.UITheme.BG);
 
         loginButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         backButton.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -154,6 +163,7 @@ public class LoginPage extends JPanel {
 
             frame.revalidate();
             frame.repaint();
+            frame.setVisible(true); // Ensure frame updates
 
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(
@@ -172,5 +182,6 @@ public class LoginPage extends JPanel {
         frame.setContentPane(new MainMenu());
         frame.revalidate();
         frame.repaint();
+        frame.setVisible(true);
     }
 }

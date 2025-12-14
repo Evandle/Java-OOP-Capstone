@@ -1,4 +1,4 @@
-package capstone;
+package capstone.classes;
 
 public class Admin extends Employee {
     public Admin() {

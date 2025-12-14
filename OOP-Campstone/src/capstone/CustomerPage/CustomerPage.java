@@ -1,7 +1,7 @@
-package capstone;
+package capstone.CustomerPage;
 
 import capstone.MainMenu.MainMenu;
-import capstone.UITheme;
+import capstone.classes.*;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -38,33 +38,33 @@ public class CustomerPage extends JPanel {
 
         // ===== PANEL SETUP =====
         setLayout(new BorderLayout(12, 12));
-        setBackground(UITheme.BG);
+        setBackground(UserCart.UITheme.BG);
         setBorder(BorderFactory.createEmptyBorder(20, 25, 20, 25));
 
         // ================= TOP AREA =================
         JPanel topContainer = new JPanel();
         topContainer.setLayout(new BoxLayout(topContainer, BoxLayout.Y_AXIS));
-        topContainer.setBackground(UITheme.BG);
+        topContainer.setBackground(UserCart.UITheme.BG);
 
         // ----- LOGOUT ROW -----
         JButton logoutBtn = new JButton("Logout");
-        UITheme.styleButton(logoutBtn, UITheme.RED);
+        UserCart.UITheme.styleButton(logoutBtn, UserCart.UITheme.RED);
 
         JPanel logoutRow = new JPanel(new FlowLayout(FlowLayout.RIGHT, 0, 0));
-        logoutRow.setBackground(UITheme.BG);
+        logoutRow.setBackground(UserCart.UITheme.BG);
         logoutRow.add(logoutBtn);
 
         // ----- CATEGORY NAV ROW -----
         JButton nextBtn = new JButton("Next");
         JButton prevBtn = new JButton("Prev");
 
-        UITheme.styleButton(nextBtn, UITheme.BLUE);
-        UITheme.styleButton(prevBtn, UITheme.BLUE);
+        UserCart.UITheme.styleButton(nextBtn, UserCart.UITheme.BLUE);
+        UserCart.UITheme.styleButton(prevBtn, UserCart.UITheme.BLUE);
 
         currentCategoryName = categories.get(currentCategoryIndex);
         categoryLabel = new JLabel(currentCategoryName, SwingConstants.CENTER);
-        categoryLabel.setFont(UITheme.HEADER);
-        categoryLabel.setForeground(UITheme.TEXT);
+        categoryLabel.setFont(UserCart.UITheme.HEADER);
+        categoryLabel.setForeground(UserCart.UITheme.TEXT);
 
         prevBtn.setEnabled(false);
 
@@ -87,7 +87,7 @@ public class CustomerPage extends JPanel {
         });
 
         JPanel categoryRow = new JPanel(new BorderLayout());
-        categoryRow.setBackground(UITheme.BG);
+        categoryRow.setBackground(UserCart.UITheme.BG);
         categoryRow.add(prevBtn, BorderLayout.WEST);
         categoryRow.add(categoryLabel, BorderLayout.CENTER);
         categoryRow.add(nextBtn, BorderLayout.EAST);
@@ -105,7 +105,7 @@ public class CustomerPage extends JPanel {
         productPanel.setBackground(Color.WHITE);
 
         scrollPane = new JScrollPane(productPanel);
-        scrollPane.setBorder(BorderFactory.createLineBorder(UITheme.BORDER));
+        scrollPane.setBorder(BorderFactory.createLineBorder(UserCart.UITheme.BORDER));
         scrollPane.getVerticalScrollBar().setUnitIncrement(12);
 
         add(scrollPane, BorderLayout.CENTER);
@@ -114,11 +114,11 @@ public class CustomerPage extends JPanel {
         JButton viewCartBtn = new JButton("View Cart");
         JButton checkOutBtn = new JButton("Check Out");
 
-        UITheme.styleButton(viewCartBtn, UITheme.BLUE);
-        UITheme.styleButton(checkOutBtn, UITheme.GREEN);
+        UserCart.UITheme.styleButton(viewCartBtn, UserCart.UITheme.BLUE);
+        UserCart.UITheme.styleButton(checkOutBtn, UserCart.UITheme.GREEN);
 
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 5));
-        bottomPanel.setBackground(UITheme.BG);
+        bottomPanel.setBackground(UserCart.UITheme.BG);
         bottomPanel.add(viewCartBtn);
         bottomPanel.add(checkOutBtn);
 
@@ -158,19 +158,19 @@ public class CustomerPage extends JPanel {
                 JPanel panel = new JPanel(new BorderLayout(10, 5));
                 panel.setBackground(Color.WHITE);
                 panel.setBorder(BorderFactory.createCompoundBorder(
-                        BorderFactory.createMatteBorder(0, 0, 1, 0, UITheme.BORDER),
+                        BorderFactory.createMatteBorder(0, 0, 1, 0, UserCart.UITheme.BORDER),
                         BorderFactory.createEmptyBorder(8, 10, 8, 10)
                 ));
                 panel.setMaximumSize(new Dimension(Integer.MAX_VALUE, 60));
 
                 JLabel productName = new JLabel(item.getItemName());
-                productName.setFont(UITheme.BODY.deriveFont(Font.BOLD));
+                productName.setFont(UserCart.UITheme.BODY.deriveFont(Font.BOLD));
 
                 JLabel productDetails = new JLabel(
                         "₱" + String.format("%.2f", item.getPrice()) +
                                 "  |  Stock: " + item.getStock()
                 );
-                productDetails.setFont(UITheme.BODY);
+                productDetails.setFont(UserCart.UITheme.BODY);
 
                 JPanel textPanel = new JPanel(new GridLayout(2, 1));
                 textPanel.setBackground(Color.WHITE);
@@ -178,7 +178,7 @@ public class CustomerPage extends JPanel {
                 textPanel.add(productDetails);
 
                 JButton addBtn = new JButton("Add");
-                UITheme.styleButton(addBtn, UITheme.GREEN);
+                UserCart.UITheme.styleButton(addBtn, UserCart.UITheme.GREEN);
 
                 if (item.getStock() <= 0) {
                     addBtn.setText("Out of Stock");
@@ -240,7 +240,7 @@ public class CustomerPage extends JPanel {
         }
 
         JTable cartTable = new JTable(tableModel);
-        UITheme.styleTable(cartTable);
+        UserCart.UITheme.styleTable(cartTable);
 
         JScrollPane scroll = new JScrollPane(cartTable);
         scroll.setPreferredSize(new Dimension(450, 250));
@@ -249,10 +249,10 @@ public class CustomerPage extends JPanel {
                 "Grand Total: ₱" + String.format("%.2f", grandTotal),
                 SwingConstants.RIGHT
         );
-        totalLabel.setFont(UITheme.HEADER);
+        totalLabel.setFont(UserCart.UITheme.HEADER);
 
         JButton removeBtn = new JButton("Remove Selected");
-        UITheme.styleButton(removeBtn, UITheme.RED);
+        UserCart.UITheme.styleButton(removeBtn, UserCart.UITheme.RED);
 
         JPanel bottom = new JPanel(new BorderLayout());
         bottom.add(totalLabel, BorderLayout.CENTER);

@@ -1,4 +1,4 @@
-package capstone;
+package capstone.classes;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -77,7 +77,6 @@ public class ReceiptGenerator {
 
         } catch (IOException e) {
             System.err.println("Error printing receipt: " + e.getMessage());
-            e.printStackTrace();
         }
     }
 }

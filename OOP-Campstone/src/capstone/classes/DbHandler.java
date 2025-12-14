@@ -1,5 +1,5 @@
-package capstone;
-import javax.management.Query;
+package capstone.classes;
+
 import java.sql.*;
 
 public class DbHandler {
