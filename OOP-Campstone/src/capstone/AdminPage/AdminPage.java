@@ -40,7 +40,7 @@ public class AdminPage extends JPanel {
         // 🔑 Limit visual width so it fits nicely in 800×600
         menu.setPreferredSize(new Dimension(280, 300));
 
-        JButton manageUsers = new JButton("Mange Users");
+        JButton manageUsers = new JButton("Manage Users");
         JButton grocery = new JButton("Grocery List");
         JButton home    = new JButton("Home");
 
