@@ -4,55 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a390bf8-92b4-4b51-95c3-8165bf849d5d" name="Changes" comment="Added getUsers(); function in the database handler that returns an ArrayList of all users.">
-      <change afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/ManageUsers.java" afterDir="false" />
+    <list default="true" id="0a390bf8-92b4-4b51-95c3-8165bf849d5d" name="Changes" comment="Added GUI theme for other pages">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/dabf9baa-f124-42ed-91f5-120202b03b95.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dabf9baa-f124-42ed-91f5-120202b03b95.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/dabf9baa-f124-42ed-91f5-120202b03b95/storage_v2/_src_/schema/main.uQUzAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dabf9baa-f124-42ed-91f5-120202b03b95/storage_v2/_src_/schema/main.uQUzAA.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AddCustomer1.form" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/ManageUsers.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AddCustomer1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AddEmployee1.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AddEmployee1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AddNewItem.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AddNewItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AdminPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/AdminPage/AdminPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/CartItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CustomerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/CustomerPage/CustomerPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/DbHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/DbHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/GroceryList/GroceryList.form" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/GroceryList/GroceryList.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/GroceryList/GroceryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/GroceryList/GroceryList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/ItemTableModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/LoginPage/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/MainMenu/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/MainMenu/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/ReceiptGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/ReceiptGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/RemoveUser.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/RemoveUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/SignUpPage/SignUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/SignUpPage/SignUpPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/UITheme.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-Campstone/src/capstone/UserCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-Campstone/src/capstone/classes/UserCart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/capstone.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/AddNewItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Admin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/AdminPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CartItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/CustomerPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/DbHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Employee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/LoginPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/MainMenu/MainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/SignUpPage/SignUpPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/SignUpPage/SignUpPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Campstone/capstone/User.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,8 +24,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -126,7 +87,7 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "379",
     "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
     "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "main-updated-GUI",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -335,7 +296,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764608318231</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added GUI theme for other pages">
+      <option name="closed" value="true" />
+      <created>1765719289539</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1765719289539</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added GUI theme for other pages">
+      <option name="closed" value="true" />
+      <created>1765719417334</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1765719417334</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,7 +339,8 @@
     <MESSAGE value="idk what i did" />
     <MESSAGE value="Draft for customer page" />
     <MESSAGE value="Added the receipt class in CartItem.java. Added Password confirmation in SignUpPage.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the receipt class in CartItem.java. Added Password confirmation in SignUpPage.java" />
+    <MESSAGE value="Added GUI theme for other pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added GUI theme for other pages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
