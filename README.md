@@ -12,9 +12,10 @@ Employees have dedicated access to manage stock, including adding/removing produ
 - [X] Add Customer GUI
 - [X] Add Customer GUI Functionality
 - [X] Add Admin Tools GUI
-- [ ] Add Admin Tools GUI Functionality
+- [X] Add Admin Tools GUI Functionality
 - [X] Maybe add a receipt system
 - [ ] Add more stuff idk...
+
 
 
 
