@@ -7,13 +7,8 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) {
-        ;
-
         try (Connection conn = DbHandler.connect()){
-
-
             // execute SQL
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
