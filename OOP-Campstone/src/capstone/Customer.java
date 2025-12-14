@@ -18,6 +18,11 @@ public class Customer extends User {
         this.address = address;
     }
 
+    public Customer(int id, String username, String password, String address) {
+        super(id, username, password);
+        this.address = address;
+    }
+
     public void clearCart(){
         this.cart.clear();
     }
@@ -48,5 +53,9 @@ public class Customer extends User {
             }
         }
         cart.add(new CartItem(item, quantity));
+    }
+
+    public List getCart(){
+        return cart;
     }
 }

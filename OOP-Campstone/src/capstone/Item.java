@@ -34,6 +34,10 @@ public class Item {
         this.stock = stock;
     }
 
+    public void setCategoryId(int categoryId){
+        this.categoryId = categoryId;
+    }
+
     public int getId() {
         return id;
     }
@@ -44,6 +48,11 @@ public class Item {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    // ToString for testing
+    public String toString(){
+        return itemName+" | P"+price+" | x"+stock+" | "+categoryId;
     }
 
 }

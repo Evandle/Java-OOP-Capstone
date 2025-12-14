@@ -9,6 +9,12 @@ public class CartItem {
         this.quantity = quantity;
     }
 
+    public CartItem(int id, String name, double price, int quantity) {
+        this.item = new Item(name, price, 0, 0);
+        this.item.setId(id);
+        this.quantity = quantity;
+    }
+
     public double getTotal() {
         return item.getPrice() * quantity;
     }
@@ -24,4 +30,6 @@ public class CartItem {
     public int getQuantity() {
         return quantity;
     }
+
+
 }

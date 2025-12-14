@@ -9,12 +9,14 @@ Employees have dedicated access to manage stock, including adding/removing produ
 ## Project To-Do List
 
 - [X] Add Categories in the database
-- [ ] Add Customer GUI
-- [ ] Add Customer GUI Functionality
-- [ ] Add Admin Tools GUI
+- [X] Add Customer GUI
+- [X] Add Customer GUI Functionality
+- [X] Add Admin Tools GUI
 - [ ] Add Admin Tools GUI Functionality
-- [ ] Maybe add a receipt system
+- [X] Maybe add a receipt system
 - [ ] Add more stuff idk...
+
+
 
 
 
