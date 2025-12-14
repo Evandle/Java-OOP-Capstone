@@ -1,12 +1,22 @@
 import capstone.classes.DbHandler;
 import capstone.MainMenu.MainMenu;
 import javax.swing.*;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 
 public class Main {
     public static void main(String[] args) {
-        DbHandler.connect();
+        ;
 
+        try (Connection conn = DbHandler.connect()){
+
+
+            // execute SQL
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         // main frame
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Grocery Shopping System");
