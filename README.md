@@ -1,22 +1,45 @@
-﻿# Java-OOP-Capstone
-## [Class Diagram](https://drive.google.com/file/d/1oc9ZqCYCJU9EGU9ViLxObRl8_OxtylJd/view?usp=sharing)
+# Grocery Shopping System (OOP Capstone)
 
-This system simulates a Grocery Shopping Experience where customers can browse and purchase products. Users must log in to make purchases; otherwise, an exception is thrown.
-Customers can view available items, their prices, and stock levels, and create a shopping list to checkout, which displays selected items and the total amount.
-Stock is managed via a CSV file, and out-of-stock items are disabled for selection. New users must sign up with a username, password (minimum 8 characters, including an uppercase letter and a number), and delivery address; invalid passwords trigger an exception.
-Employees have dedicated access to manage stock, including adding/removing products and updating prices or quantities. A single admin account can manage users and handle stock.
+A Java-based application that streamlines the grocery shopping experience using Object-Oriented Programming principles. This system allows users to browse categories, manage a shopping cart within a budget, and generate receipts.
 
-## Project To-Do List
+## How to Run
 
-- [X] Add Categories in the database
-- [X] Add Customer GUI
-- [X] Add Customer GUI Functionality
-- [X] Add Admin Tools GUI
-- [ ] Add Admin Tools GUI Functionality
-- [X] Maybe add a receipt system
-- [ ] Add more stuff idk...
+### Prerequisites
+Before running the system, ensure you have the following installed:
+* **JDK** (Version 17 or higher recommended)
+* **IDE** (IntelliJ IDEA, Eclipse, or VS Code)
+* **SQLite** (For database management)
 
+### Installation
 
+1.  **Clone the Repository**
+    ```bash
+    git clone https://github.com/Evandle/Java-OOP-Capstone.git
+    cd Java-OOP-Capstone
+    ```
 
+2.  **Open in IDE**
+    * Open your IDE.
+    * Select **File > Open** and choose the project folder.
+    * Allow the IDE to index files and download any dependencies (if using Maven/Gradle).
 
+3.  **Database Setup**
+    * The project uses **SQLite**.
+    * Ensure the `capstone.db` file is in the root directory.
+    * *Optional:* If the database is missing/broken, run `OOP-Campstone/src/capstone/DatabaseSetup.java` first to initialize the tables.
+
+### Running the Application
+
+1.  Navigate to the main source folder: `OOP-Campstone/src`.
+2.  Locate **`Main.java`**.
+3.  Right-click the file and select **Run 'Main'**.
+
+### Default Login Credentials
+Use these credentials to test the system:
+* **Admin:** `admin` / `admin123`
+---
+
+## Key Features to Test
+* ✅ **Browse Categories:** Explore the 7 main sections (Frozen Goods, Drinks, Snacks, etc.).
+* ✅ **Checkout System:** Process a transaction and view the generated receipt.
 
