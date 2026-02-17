@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-
 public class Main {
     public static void main(String[] args) {
         try (Connection conn = DbHandler.connect()){
@@ -12,6 +11,7 @@ public class Main {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        System.out.println("Working Directory = " + System.getProperty("user.dir"));
         // main frame
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Grocery Shopping System");
@@ -22,5 +22,4 @@ public class Main {
             frame.setVisible(true);
         });
     }
-
 }
