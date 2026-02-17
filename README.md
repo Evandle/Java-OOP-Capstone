@@ -14,8 +14,8 @@ Prerequisites
     Git (to clone the repository).
     
 1. Clone the Repo
-   ```git clone https://github.com/your-username/grocery-shopping-system.git```
-   ```cd grocery-shopping-system```
+   `git clone https://github.com/your-username/grocery-shopping-system.git
+   cd grocery-shopping-system`
    
 3. Open in IDE
     - Open your IDE and select File > Open.
@@ -50,6 +50,7 @@ Key Features to Test
 - [x] Add Admin Tools GUI Functionality
 - [X] Maybe add a receipt system
 - [ ] Add more stuff idk...
+
 
 
 
